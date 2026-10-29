@@ -122,7 +122,9 @@ together.
 - City reset timing: a team's season counts toward its city only if the season
   falls in a later year than the reset title (an MLB season that ends in October
   2026 does not count against a June 2026 NBA or NHL title in the same city).
-- Bump `updated` in any file you touch.
+- Bump `updated` in any file you touch. When `index.html` changes, also bump the
+  footer's "(Last updated: Month D, YYYY)" line (near the bottom of the page) to
+  the same date. It is easy to miss and the live site shows it to every visitor.
 - Keep `sources` populated for any researched change. Do not strip a flag without
   confirming the underlying value.
 
@@ -143,3 +145,5 @@ against a live source before setting a team to 0.
 - Every team listed on `index.html` still matches its JSON entry.
 - No team has a negative or impossible count, and champions from the latest
   completed season read 0.
+- The footer's "Last updated" date on `index.html` matches the newest `updated`
+  date in the JSON files: `grep -o 'Last updated: [^)]*' index.html`.
