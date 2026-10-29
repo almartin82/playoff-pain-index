@@ -213,9 +213,11 @@
           "firstRound": 2,
           "winningRecordNoPlayoff": 2
         },
-        "window": "2013-2025",
+        "window": "2013-2026",
         "confidence": "high",
-        "flags": [],
+        "flags": [
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
+        ],
         "sources": [
           "https://en.wikipedia.org/wiki/Baltimore_Orioles",
           "https://en.wikipedia.org/wiki/2013_Baltimore_Orioles_season",
@@ -225,7 +227,9 @@
           "https://en.wikipedia.org/wiki/2022_Baltimore_Orioles_season",
           "https://en.wikipedia.org/wiki/2023_Baltimore_Orioles_season",
           "https://en.wikipedia.org/wiki/2024_Baltimore_Orioles_season",
-          "https://en.wikipedia.org/wiki/2025_Baltimore_Orioles_season"
+          "https://en.wikipedia.org/wiki/2025_Baltimore_Orioles_season",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -305,6 +309,12 @@
             "result": "75-87, missed playoffs (losing record)",
             "tier": "none",
             "pts": 0
+          },
+          {
+            "season": "2026",
+            "result": "79-82; missed playoffs, losing record",
+            "tier": "none",
+            "pts": 0
           }
         ]
       }
@@ -319,15 +329,18 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2023-2025",
+        "window": "2023-2026",
         "confidence": "high",
         "flags": [
-          "All three seasons missed the playoffs with non-winning records (79-83, 80-82, 81-81). The 2025 81-81 is exactly .500, which is NOT a winning record (requires more wins than losses), so winningRecordNoPlayoff does not apply."
+          "All three seasons missed the playoffs with non-winning records (79-83, 80-82, 81-81). The 2025 81-81 is exactly .500, which is NOT a winning record (requires more wins than losses), so winningRecordNoPlayoff does not apply.",
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
         ],
         "sources": [
           "https://en.wikipedia.org/wiki/2023_San_Francisco_Giants_season",
           "https://en.wikipedia.org/wiki/2024_San_Francisco_Giants_season",
-          "https://en.wikipedia.org/wiki/2025_San_Francisco_Giants_season"
+          "https://en.wikipedia.org/wiki/2025_San_Francisco_Giants_season",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -345,6 +358,12 @@
           {
             "season": "2025",
             "result": "81-81, 3rd NL West, missed playoffs (non-winning record, exactly .500)",
+            "tier": "none",
+            "pts": 0
+          },
+          {
+            "season": "2026",
+            "result": "65-97; missed playoffs, losing record",
             "tier": "none",
             "pts": 0
           }
@@ -487,25 +506,35 @@
     },
     "Boston": {
       "Boston Red Sox": {
-        "postResetPPI": 2,
+        "postResetPPI": 4,
         "breakdown": {
           "finals": 0,
           "semis": 0,
           "quarters": 0,
-          "firstRound": 1,
+          "firstRound": 2,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2025",
+        "window": "2025-2026",
         "confidence": "high",
-        "flags": [],
+        "flags": [
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
+        ],
         "sources": [
           "https://www.baseball-reference.com/postseason/2025_ALWC2.shtml",
-          "https://www.mlb.com/news/red-sox-eliminated-in-al-wild-card-series"
+          "https://www.mlb.com/news/red-sox-eliminated-in-al-wild-card-series",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
             "season": "2025",
             "result": "Lost AL Wild Card Series 2-1 to New York Yankees (made playoffs as a Wild Card, eliminated in the first round)",
+            "tier": "firstRound",
+            "pts": 2
+          },
+          {
+            "season": "2026",
+            "result": "87-75; lost Wild Card Series to New York Yankees 0-2",
             "tier": "firstRound",
             "pts": 2
           }
@@ -589,24 +618,27 @@
     },
     "Chicago": {
       "Chicago White Sox": {
-        "postResetPPI": 6,
+        "postResetPPI": 10,
         "breakdown": {
           "finals": 0,
           "semis": 0,
-          "quarters": 1,
+          "quarters": 2,
           "firstRound": 1,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2017-2025",
+        "window": "2017-2026",
         "confidence": "high",
         "flags": [
-          "2022 was exactly 81-81 (.500), which is NOT a winning record, so it does not score as winningRecordNoPlayoff."
+          "2022 was exactly 81-81 (.500), which is NOT a winning record, so it does not score as winningRecordNoPlayoff.",
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
         ],
         "sources": [
           "https://en.wikipedia.org/wiki/2020_Chicago_White_Sox_season",
           "https://en.wikipedia.org/wiki/2021_Chicago_White_Sox_season",
           "https://en.wikipedia.org/wiki/2022_Chicago_White_Sox_season",
-          "https://www.baseball-reference.com/postseason/2020_ALWC4.shtml"
+          "https://www.baseball-reference.com/postseason/2020_ALWC4.shtml",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -662,6 +694,12 @@
             "result": "Missed playoffs, 60-102",
             "tier": "none",
             "pts": 0
+          },
+          {
+            "season": "2026",
+            "result": "84-78; lost ALDS to Cleveland Guardians 2-3",
+            "tier": "quarters",
+            "pts": 4
           }
         ]
       },
@@ -1082,19 +1120,23 @@
     },
     "Cleveland": {
       "Cleveland Guardians": {
-        "postResetPPI": 25,
+        "postResetPPI": 33,
         "breakdown": {
           "finals": 0,
-          "semis": 1,
+          "semis": 2,
           "quarters": 3,
           "firstRound": 2,
           "winningRecordNoPlayoff": 1
         },
-        "window": "2017-2025",
+        "window": "2017-2026",
         "confidence": "high",
-        "flags": [],
+        "flags": [
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
+        ],
         "sources": [
-          "https://en.wikipedia.org/wiki/List_of_Cleveland_Guardians_seasons"
+          "https://en.wikipedia.org/wiki/List_of_Cleveland_Guardians_seasons",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -1150,6 +1192,12 @@
             "result": "Lost AL Wild Card Series to Tigers 2-1 (88-74)",
             "tier": "firstRound",
             "pts": 2
+          },
+          {
+            "season": "2026",
+            "result": "85-77; lost ALCS to Tampa Bay Rays 2-4",
+            "tier": "semis",
+            "pts": 8
           }
         ]
       },
@@ -1416,13 +1464,17 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2024-2025",
+        "window": "2024-2026",
         "confidence": "high",
-        "flags": [],
+        "flags": [
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
+        ],
         "sources": [
           "https://en.wikipedia.org/wiki/2024_Colorado_Rockies_season",
           "https://en.wikipedia.org/wiki/2025_Colorado_Rockies_season",
-          "https://www.baseball-reference.com/teams/COL/2025.shtml"
+          "https://www.baseball-reference.com/teams/COL/2025.shtml",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -1434,6 +1486,12 @@
           {
             "season": "2025",
             "result": "43-119, worst record in franchise history, missed playoffs (losing record)",
+            "tier": "none",
+            "pts": 0
+          },
+          {
+            "season": "2026",
+            "result": "58-104; missed playoffs, losing record",
             "tier": "none",
             "pts": 0
           }
@@ -1556,13 +1614,17 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 2
         },
-        "window": "2009-2025",
+        "window": "2009-2026",
         "confidence": "high",
-        "flags": [],
+        "flags": [
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
+        ],
         "sources": [
           "https://en.wikipedia.org/wiki/List_of_Detroit_Tigers_seasons",
           "https://sabr.org/gamesproj/game/october-6-2009-twins-defeat-tigers-in-game-163-to-win-al-central-tiebreaker/",
-          "https://www.baseball-reference.com/boxes/SEA/SEA202510100.shtml"
+          "https://www.baseball-reference.com/boxes/SEA/SEA202510100.shtml",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -1666,6 +1728,12 @@
             "result": "87-75, lost ALDS to Mariners in Game 5",
             "tier": "quarters",
             "pts": 4
+          },
+          {
+            "season": "2026",
+            "result": "76-86; missed playoffs, losing record",
+            "tier": "none",
+            "pts": 0
           }
         ]
       },
@@ -2203,14 +2271,18 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 1
         },
-        "window": "2024-2025",
+        "window": "2024-2026",
         "confidence": "high",
-        "flags": [],
+        "flags": [
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
+        ],
         "sources": [
           "https://en.wikipedia.org/wiki/2025_Kansas_City_Royals_season",
           "https://www.baseball-reference.com/postseason/2024_ALWC2.shtml",
           "https://www.mlb.com/news/royals-lose-2024-alds-to-yankees",
-          "https://www.espn.com/mlb/story/_/id/41576560/royals-sweep-orioles-wild-card-series-advance-face-yankees-alds"
+          "https://www.espn.com/mlb/story/_/id/41576560/royals-sweep-orioles-wild-card-series-advance-face-yankees-alds",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -2224,6 +2296,12 @@
             "result": "Missed the playoffs with an 82-80 record (winning record, more wins than losses)",
             "tier": "winningRecordNoPlayoff",
             "pts": 1
+          },
+          {
+            "season": "2026",
+            "result": "69-93; missed playoffs, losing record",
+            "tier": "none",
+            "pts": 0
           }
         ]
       },
@@ -2302,13 +2380,23 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "MLB seasons strictly after 2025 (none; 2026 MLB season not complete and not strictly-after-counting per spec)",
+        "window": "2026",
         "confidence": "high",
         "flags": [
-          "Empty window: only MLB seasons strictly after 2025 count, and there are none (2025 MLB season is not strictly after 2025; 2026 is in progress). postResetPPI=0 by construction."
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
         ],
-        "sources": [],
-        "seasons": []
+        "sources": [
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
+        ],
+        "seasons": [
+          {
+            "season": "2026",
+            "result": "62-100; missed playoffs, losing record",
+            "tier": "none",
+            "pts": 0
+          }
+        ]
       },
       "LA Clippers": {
         "postResetPPI": 0,
@@ -2478,15 +2566,24 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "seasons strictly after 2025, through 2025 (empty)",
+        "window": "2026",
         "confidence": "high",
         "flags": [
-          "Empty window: the Panthers' June 2025 Stanley Cup reset counts only MLB seasons strictly after 2025. MLB 2025 (= 2025, not strictly after) does not count, and throughSeason is 2025, so no MLB season falls in the window. postResetPPI = 0 by construction."
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
         ],
         "sources": [
-          "/tmp/ppi_reset_spec.json"
+          "/tmp/ppi_reset_spec.json",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
-        "seasons": []
+        "seasons": [
+          {
+            "season": "2026",
+            "result": "80-82; missed playoffs, losing record",
+            "tier": "none",
+            "pts": 0
+          }
+        ]
       },
       "Miami Dolphins": {
         "postResetPPI": 0,
@@ -2535,53 +2632,7 @@
         ]
       }
     },
-    "Milwaukee": {
-      "Milwaukee Brewers": {
-        "postResetPPI": 13,
-        "breakdown": {
-          "finals": 0,
-          "semis": 1,
-          "quarters": 0,
-          "firstRound": 2,
-          "winningRecordNoPlayoff": 1
-        },
-        "window": "2022-2025",
-        "confidence": "high",
-        "flags": [],
-        "sources": [
-          "https://en.wikipedia.org/wiki/2022_Milwaukee_Brewers_season",
-          "https://en.wikipedia.org/wiki/2023_Milwaukee_Brewers_season",
-          "https://en.wikipedia.org/wiki/2024_Milwaukee_Brewers_season",
-          "https://en.wikipedia.org/wiki/2025_Milwaukee_Brewers_season"
-        ],
-        "seasons": [
-          {
-            "season": "2022",
-            "result": "86-76, winning record, missed playoffs (finished 1 game behind 3rd NL Wild Card)",
-            "tier": "winningRecordNoPlayoff",
-            "pts": 1
-          },
-          {
-            "season": "2023",
-            "result": "Won NL Central (92-70); lost NL Wild Card Series 0-2 to Arizona Diamondbacks",
-            "tier": "firstRound",
-            "pts": 2
-          },
-          {
-            "season": "2024",
-            "result": "Won NL Central; lost NL Wild Card Series 1-2 to New York Mets",
-            "tier": "firstRound",
-            "pts": 2
-          },
-          {
-            "season": "2025",
-            "result": "97-65, NL best record; beat Cubs in NLDS 3-2; lost NLCS 0-4 (swept) to Los Angeles Dodgers",
-            "tier": "semis",
-            "pts": 8
-          }
-        ]
-      }
-    },
+    "Milwaukee": {},
     "Minneapolis": {
       "Minnesota Timberwolves": {
         "postResetPPI": 47,
@@ -3359,20 +3410,24 @@
     },
     "Philadelphia": {
       "Philadelphia Phillies": {
-        "postResetPPI": 4,
+        "postResetPPI": 6,
         "breakdown": {
           "finals": 0,
           "semis": 0,
           "quarters": 1,
-          "firstRound": 0,
+          "firstRound": 1,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2025",
+        "window": "2025-2026",
         "confidence": "high",
-        "flags": [],
+        "flags": [
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
+        ],
         "sources": [
           "https://www.mlb.com/news/phillies-lose-nlds-2025",
-          "https://whyy.org/articles/philadelphia-phillies-dodgers-nlds-game-4/"
+          "https://whyy.org/articles/philadelphia-phillies-dodgers-nlds-game-4/",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -3380,6 +3435,12 @@
             "result": "Lost NLDS to Los Angeles Dodgers 3-1 (eliminated Game 4, Oct 9, 2025)",
             "tier": "quarters",
             "pts": 4
+          },
+          {
+            "season": "2026",
+            "result": "88-74; lost Wild Card Series to Atlanta Braves 1-2",
+            "tier": "firstRound",
+            "pts": 2
           }
         ]
       },
@@ -3810,17 +3871,19 @@
     },
     "Pittsburgh": {
       "Pittsburgh Pirates": {
-        "postResetPPI": 1,
+        "postResetPPI": 2,
         "breakdown": {
           "finals": 0,
           "semis": 0,
           "quarters": 0,
           "firstRound": 0,
-          "winningRecordNoPlayoff": 1
+          "winningRecordNoPlayoff": 2
         },
-        "window": "2018-2025",
+        "window": "2018-2026",
         "confidence": "high",
-        "flags": [],
+        "flags": [
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
+        ],
         "sources": [
           "https://en.wikipedia.org/wiki/2018_Pittsburgh_Pirates_season",
           "https://en.wikipedia.org/wiki/2019_Pittsburgh_Pirates_season",
@@ -3829,7 +3892,9 @@
           "https://en.wikipedia.org/wiki/2022_Pittsburgh_Pirates_season",
           "https://en.wikipedia.org/wiki/2023_Pittsburgh_Pirates_season",
           "https://en.wikipedia.org/wiki/2024_Pittsburgh_Pirates_season",
-          "https://en.wikipedia.org/wiki/2025_Pittsburgh_Pirates_season"
+          "https://en.wikipedia.org/wiki/2025_Pittsburgh_Pirates_season",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -3879,6 +3944,12 @@
             "result": "Missed playoffs, 71-91 (losing record)",
             "tier": "none",
             "pts": 0
+          },
+          {
+            "season": "2026",
+            "result": "82-80; winning record, missed playoffs",
+            "tier": "winningRecordNoPlayoff",
+            "pts": 1
           }
         ]
       },
@@ -3966,13 +4037,23 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "after 2025 through 2025 (empty)",
+        "window": "2026",
         "confidence": "high",
         "flags": [
-          "Empty window: countSeasonsAfter=2025 and throughSeason=2025, so no MLB season qualifies (2025 is not strictly after 2025). 2026 MLB season is in progress and does not count."
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
         ],
-        "sources": [],
-        "seasons": []
+        "sources": [
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
+        ],
+        "seasons": [
+          {
+            "season": "2026",
+            "result": "76-86; missed playoffs, losing record",
+            "tier": "none",
+            "pts": 0
+          }
+        ]
       },
       "Seattle Storm": {
         "postResetPPI": 0,
@@ -4047,11 +4128,12 @@
           "firstRound": 3,
           "winningRecordNoPlayoff": 1
         },
-        "window": "2020-2025",
+        "window": "2020-2026",
         "confidence": "high",
         "flags": [
           "2022: Cardinals were NL Central champions but as the 3-seed lost in the Wild Card round of the 12-team format; scored as firstRound (depth from championship), not a bye.",
-          "2020 was the expanded 16-team pandemic season; Wild Card round was best-of-3. Cardinals lost it 2-1, scored firstRound."
+          "2020 was the expanded 16-team pandemic season; Wild Card round was best-of-3. Cardinals lost it 2-1, scored firstRound.",
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
         ],
         "sources": [
           "https://en.wikipedia.org/wiki/List_of_St._Louis_Cardinals_seasons",
@@ -4060,7 +4142,9 @@
           "https://en.wikipedia.org/wiki/2022_St._Louis_Cardinals_season",
           "https://en.wikipedia.org/wiki/2023_St._Louis_Cardinals_season",
           "https://en.wikipedia.org/wiki/2024_St._Louis_Cardinals_season",
-          "https://en.wikipedia.org/wiki/2025_St._Louis_Cardinals_season"
+          "https://en.wikipedia.org/wiki/2025_St._Louis_Cardinals_season",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -4098,28 +4182,38 @@
             "result": "78-84; missed playoffs, losing record",
             "tier": "none",
             "pts": 0
+          },
+          {
+            "season": "2026",
+            "result": "77-85; missed playoffs, losing record",
+            "tier": "none",
+            "pts": 0
           }
         ]
       }
     },
     "Tampa Bay": {
       "Tampa Bay Rays": {
-        "postResetPPI": 4,
+        "postResetPPI": 20,
         "breakdown": {
-          "finals": 0,
+          "finals": 1,
           "semis": 0,
           "quarters": 0,
           "firstRound": 2,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2022-2025",
+        "window": "2022-2026",
         "confidence": "high",
-        "flags": [],
+        "flags": [
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
+        ],
         "sources": [
           "https://en.wikipedia.org/wiki/2022_Tampa_Bay_Rays_season",
           "https://en.wikipedia.org/wiki/2023_Tampa_Bay_Rays_season",
           "https://en.wikipedia.org/wiki/2024_Tampa_Bay_Rays_season",
-          "https://en.wikipedia.org/wiki/2025_Tampa_Bay_Rays_season"
+          "https://en.wikipedia.org/wiki/2025_Tampa_Bay_Rays_season",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -4145,6 +4239,12 @@
             "result": "Missed playoffs, 77-85 (losing record)",
             "tier": "none",
             "pts": 0
+          },
+          {
+            "season": "2026",
+            "result": "98-64; lost 2026 World Series to Milwaukee Brewers 1-4",
+            "tier": "finals",
+            "pts": 16
           }
         ]
       },
@@ -4204,13 +4304,17 @@
           "firstRound": 3,
           "winningRecordNoPlayoff": 1
         },
-        "window": "2020-2025",
+        "window": "2020-2026",
         "confidence": "high",
-        "flags": [],
+        "flags": [
+          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
+        ],
         "sources": [
           "https://en.wikipedia.org/wiki/List_of_Toronto_Blue_Jays_seasons",
           "https://champsorchumps.us/team/mlb/toronto-blue-jays",
-          "https://en.wikipedia.org/wiki/2025_World_Series"
+          "https://en.wikipedia.org/wiki/2025_World_Series",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
+          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
         ],
         "seasons": [
           {
@@ -4248,6 +4352,12 @@
             "result": "Won ALDS (Yankees) and ALCS (Mariners), lost 2025 World Series to LA Dodgers (3-4)",
             "tier": "finals",
             "pts": 16
+          },
+          {
+            "season": "2026",
+            "result": "79-83; missed playoffs, losing record",
+            "tier": "none",
+            "pts": 0
           }
         ]
       },

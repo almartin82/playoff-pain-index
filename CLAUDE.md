@@ -46,7 +46,14 @@ name, which is what makes older/odd formats and different leagues comparable.
   inherit the old city's pain.
 - Designated expansion-replacement cities combine with the team that left
   (Minnesota Wild + North Stars; Houston Texans + Oilers).
-- The 2026 seasons are in progress and do not count. Only completed seasons score.
+- Only completed seasons score. A league's season counts once its championship has
+  been decided, not when the calendar year ends. As of 2026-10-28 the data runs
+  through: MLB 2026 (Brewers won the World Series), NBA 2025-26 (Knicks), NHL
+  2025-26 (Hurricanes), NFL 2025 (Seahawks, Super Bowl LX), CFL 2025
+  (Roughriders), WNBA 2025 (Aces), MLS 2025 (Inter Miami). The 2026 WNBA Finals
+  (Golden State vs Atlanta) were still in progress, and the 2026 CFL and MLS
+  seasons and the 2026 NFL season had not finished. Update this line whenever a
+  league's latest season is added.
 
 ### Per-league round mapping
 
@@ -81,6 +88,14 @@ name, which is what makes older/odd formats and different leagues comparable.
   score from `breakdown`**. Always trust the recomputed score over a stored one.
 - `.claude/skills/ppi-<league>/SKILL.md` are thin wrappers that call
   `python3 ppi_query.py <league> $ARGS`.
+- `ppi_cities.py` aggregates team PPI into metros (rank-discounted sum with a
+  city-level championship reset) and writes `ppi-cities.json` (big-four reset)
+  and `ppi-cities-all.json` (any-league reset). `python3 ppi_cities.py --html`
+  prints the four `<tbody>` blocks for the cities tables in `index.html`.
+- `ppi-cities-postreset.json` and `ppi-cities-postreset-all.json` hold sourced,
+  season-by-season ledgers of the pain a team has piled up since its city's last
+  reset title. `build_postreset_all.py` derives the all-leagues file from the
+  big-four one plus extra research.
 
 ## The pinning convention
 
@@ -98,6 +113,15 @@ together.
   (it recomputes). If you store a `score`, keep it consistent with the breakdown.
 - Adding the latest completed season: append that season's result for each team
   (the round lost, or a winningRecordNoPlayoff), and reset any new champion to 0.
+  Clear any flags that said that season was "in progress".
+- Then carry the season into the city files: append it to every ledger in both
+  `ppi-cities-postreset*.json` for that league's teams, drop the ledger of a team
+  that just became its city's reset champion, run `python3 ppi_cities.py --json`,
+  and paste the `--html` output into the cities tables. If a pinned site team's
+  score changes, update its card on `index.html` and re-sort the cards.
+- City reset timing: a team's season counts toward its city only if the season
+  falls in a later year than the reset title (an MLB season that ends in October
+  2026 does not count against a June 2026 NBA or NHL title in the same city).
 - Bump `updated` in any file you touch.
 - Keep `sources` populated for any researched change. Do not strip a flag without
   confirming the underlying value.

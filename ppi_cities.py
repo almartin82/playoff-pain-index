@@ -345,7 +345,7 @@ def write_json(mode="big4", path=None):
         "measure": ("Rank-discounted post-reset PPI (big-four reset)" if mode == "big4"
                     else "Rank-discounted post-reset PPI (all-leagues reset)"),
         "method": _method(mode),
-        "updated": "2026-06-18",
+        "updated": "2026-10-28",
         "tableMinTeams": MIN_TEAMS,   # both published tables require >= this many teams
         "judgmentCalls": JUDGMENT,
         "cities": [city_record(i, c, ts) for i, (c, ts) in enumerate(ranked, 1)],
