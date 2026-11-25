@@ -105,15 +105,15 @@
         ]
       },
       "Atlanta Dream": {
-        "postResetPPI": 12,
+        "postResetPPI": 28,
         "breakdown": {
-          "finals": 0,
+          "finals": 1,
           "semis": 0,
           "quarters": 3,
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2022 to 2025",
+        "window": "2022 to 2026",
         "confidence": "high",
         "flags": [
           "Per WNBA shallow-bracket mapping (CLAUDE.md / task spec), the first playoff round maps to quarters (4 pts). 2023, 2024, 2025 were all first-round (round of 8) eliminations.",
@@ -123,7 +123,9 @@
           "https://en.wikipedia.org/wiki/2022_Atlanta_Dream_season",
           "https://en.wikipedia.org/wiki/2023_Atlanta_Dream_season",
           "https://en.wikipedia.org/wiki/2024_Atlanta_Dream_season",
-          "https://en.wikipedia.org/wiki/2025_Atlanta_Dream_season"
+          "https://en.wikipedia.org/wiki/2025_Atlanta_Dream_season",
+          "https://en.wikipedia.org/wiki/2026_WNBA_playoffs",
+          "https://en.wikipedia.org/wiki/2026_WNBA_Finals"
         ],
         "seasons": [
           {
@@ -149,6 +151,12 @@
             "result": "Made playoffs as No. 3 seed (30-14, franchise-best); lost best-of-3 First Round 1-2 to Indiana Fever (confirmed complete)",
             "tier": "quarters",
             "pts": 4
+          },
+          {
+            "season": "2026",
+            "result": "30-14, No. 4 seed; beat Washington 2-0 and New York 3-0, lost the WNBA Finals 3-4 to Golden State (Game 7, Oct 31, 2026)",
+            "tier": "finals",
+            "pts": 16
           }
         ]
       },
@@ -329,45 +337,15 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2023-2026",
+        "window": "after 2026 (empty)",
         "confidence": "high",
         "flags": [
-          "All three seasons missed the playoffs with non-winning records (79-83, 80-82, 81-81). The 2025 81-81 is exactly .500, which is NOT a winning record (requires more wins than losses), so winningRecordNoPlayoff does not apply.",
-          "2026 MLB season confirmed complete (Brewers won the World Series Oct 28, 2026), so it counts."
+          "All-leagues reset 2026 (Valkyries, WNBA): only seasons that end in a later year than 2026 count, and none has finished."
         ],
         "sources": [
-          "https://en.wikipedia.org/wiki/2023_San_Francisco_Giants_season",
-          "https://en.wikipedia.org/wiki/2024_San_Francisco_Giants_season",
-          "https://en.wikipedia.org/wiki/2025_San_Francisco_Giants_season",
-          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_postseason",
-          "https://en.wikipedia.org/wiki/2026_Major_League_Baseball_season"
+          "https://en.wikipedia.org/wiki/2026_WNBA_Finals"
         ],
-        "seasons": [
-          {
-            "season": "2023",
-            "result": "79-83, 4th NL West, missed playoffs (non-winning record)",
-            "tier": "none",
-            "pts": 0
-          },
-          {
-            "season": "2024",
-            "result": "80-82, 4th NL West, missed playoffs (non-winning record)",
-            "tier": "none",
-            "pts": 0
-          },
-          {
-            "season": "2025",
-            "result": "81-81, 3rd NL West, missed playoffs (non-winning record, exactly .500)",
-            "tier": "none",
-            "pts": 0
-          },
-          {
-            "season": "2026",
-            "result": "65-97; missed playoffs, losing record",
-            "tier": "none",
-            "pts": 0
-          }
-        ]
+        "seasons": []
       },
       "San Jose Sharks": {
         "postResetPPI": 0,
@@ -378,130 +356,72 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2022-23 to 2025-26",
+        "window": "after 2026 (empty)",
         "confidence": "high",
         "flags": [
-          "All four seasons missed the playoffs. NHL standings are by points, not win-loss, and the per-league mapping does not assign a winningRecordNoPlayoff tier for the NHL (that tier is mainly MLB/NFL). 2025-26 was 39-35-8 (more wins than regulation losses by points), but under the NHL mapping it scores 0 as a missed-playoff season."
+          "All-leagues reset 2026 (Valkyries, WNBA): only seasons that end in a later year than 2026 count, and none has finished."
         ],
         "sources": [
-          "https://en.wikipedia.org/wiki/2022%E2%80%9323_San_Jose_Sharks_season",
-          "https://en.wikipedia.org/wiki/2023%E2%80%9324_San_Jose_Sharks_season",
-          "https://en.wikipedia.org/wiki/2024%E2%80%9325_San_Jose_Sharks_season",
-          "https://en.wikipedia.org/wiki/2025%E2%80%9326_San_Jose_Sharks_season",
-          "https://www.nhl.com/sharks/news/why-san-jose-sharks-are-eliminated-from-2025-2026-postseason-race-x9701"
+          "https://en.wikipedia.org/wiki/2026_WNBA_Finals"
         ],
-        "seasons": [
-          {
-            "season": "2022-23",
-            "result": "22-44-16 (60 pts), 7th Pacific, missed playoffs",
-            "tier": "none",
-            "pts": 0
-          },
-          {
-            "season": "2023-24",
-            "result": "19-54-9 (47 pts), missed playoffs",
-            "tier": "none",
-            "pts": 0
-          },
-          {
-            "season": "2024-25",
-            "result": "20-50-12 (52 pts), last in Pacific, missed playoffs",
-            "tier": "none",
-            "pts": 0
-          },
-          {
-            "season": "2025-26",
-            "result": "39-35-8 (86 pts), missed playoffs (eliminated Apr 13, 2026)",
-            "tier": "none",
-            "pts": 0
-          }
-        ]
+        "seasons": []
       },
       "San Francisco 49ers": {
-        "postResetPPI": 28,
-        "breakdown": {
-          "finals": 1,
-          "semis": 1,
-          "quarters": 1,
-          "firstRound": 0,
-          "winningRecordNoPlayoff": 0
-        },
-        "window": "2022-2025",
-        "confidence": "high",
-        "flags": [
-          "The 2022 NFL season counts as the first post-reset season (2022-23), per spec. 2024 was 6-11, a losing record with no playoffs, so it scores 0."
-        ],
-        "sources": [
-          "https://en.wikipedia.org/wiki/2022_San_Francisco_49ers_season",
-          "https://en.wikipedia.org/wiki/2023_San_Francisco_49ers_season",
-          "https://en.wikipedia.org/wiki/2025_San_Francisco_49ers_season"
-        ],
-        "seasons": [
-          {
-            "season": "2022",
-            "result": "13-4, lost NFC Championship Game 7-31 to Philadelphia Eagles",
-            "tier": "semis",
-            "pts": 8
-          },
-          {
-            "season": "2023",
-            "result": "12-5, lost Super Bowl LVIII 22-25 (OT) to Kansas City Chiefs",
-            "tier": "finals",
-            "pts": 16
-          },
-          {
-            "season": "2024",
-            "result": "6-11, missed playoffs (non-winning record)",
-            "tier": "none",
-            "pts": 0
-          },
-          {
-            "season": "2025",
-            "result": "12-5, won Wild Card vs Eagles, lost Divisional Round 6-41 to Seattle Seahawks",
-            "tier": "quarters",
-            "pts": 4
-          }
-        ]
-      },
-      "San Jose Earthquakes": {
-        "postResetPPI": 2,
+        "postResetPPI": 0,
         "breakdown": {
           "finals": 0,
           "semis": 0,
           "quarters": 0,
-          "firstRound": 1,
+          "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2023-2025",
+        "window": "after 2026 (empty)",
         "confidence": "high",
         "flags": [
-          "The 2023 Wild Card round is the first/entry playoff round in the MLS bracket, mapped to firstRound (2 pts). 2024 and 2025 both missed the playoffs with non-winning records (0 pts)."
+          "All-leagues reset 2026 (Valkyries, WNBA): only seasons that end in a later year than 2026 count, and none has finished."
         ],
         "sources": [
-          "https://en.wikipedia.org/wiki/2023_San_Jose_Earthquakes_season",
-          "https://en.wikipedia.org/wiki/2024_San_Jose_Earthquakes_season",
-          "https://en.wikipedia.org/wiki/2025_San_Jose_Earthquakes_season"
+          "https://en.wikipedia.org/wiki/2026_WNBA_Finals"
         ],
-        "seasons": [
-          {
-            "season": "2023",
-            "result": "Made playoffs as 9-seed; lost Wild Card round to Sporting KC 0-0 (2-4 on penalties)",
-            "tier": "firstRound",
-            "pts": 2
-          },
-          {
-            "season": "2024",
-            "result": "6-25-3, 14th in West, did not qualify",
-            "tier": "none",
-            "pts": 0
-          },
-          {
-            "season": "2025",
-            "result": "11-15-8, 10th in West, did not qualify",
-            "tier": "none",
-            "pts": 0
-          }
-        ]
+        "seasons": []
+      },
+      "San Jose Earthquakes": {
+        "postResetPPI": 0,
+        "breakdown": {
+          "finals": 0,
+          "semis": 0,
+          "quarters": 0,
+          "firstRound": 0,
+          "winningRecordNoPlayoff": 0
+        },
+        "window": "after 2026 (empty)",
+        "confidence": "high",
+        "flags": [
+          "All-leagues reset 2026 (Valkyries, WNBA): only seasons that end in a later year than 2026 count, and none has finished."
+        ],
+        "sources": [
+          "https://en.wikipedia.org/wiki/2026_WNBA_Finals"
+        ],
+        "seasons": []
+      },
+      "Golden State Warriors": {
+        "postResetPPI": 0,
+        "breakdown": {
+          "finals": 0,
+          "semis": 0,
+          "quarters": 0,
+          "firstRound": 0,
+          "winningRecordNoPlayoff": 0
+        },
+        "window": "after 2026 (empty)",
+        "confidence": "high",
+        "flags": [
+          "All-leagues reset 2026 (Valkyries, WNBA): only seasons that end in a later year than 2026 count, and none has finished."
+        ],
+        "sources": [
+          "https://en.wikipedia.org/wiki/2026_WNBA_Finals"
+        ],
+        "seasons": []
       }
     },
     "Boston": {
@@ -1300,21 +1220,23 @@
         ]
       },
       "Dallas Wings": {
-        "postResetPPI": 0,
+        "postResetPPI": 4,
         "breakdown": {
           "finals": 0,
           "semis": 0,
-          "quarters": 0,
+          "quarters": 1,
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2024 through 2025",
+        "window": "2024 through 2026",
         "confidence": "high",
         "flags": [],
         "sources": [
           "https://en.wikipedia.org/wiki/2025_Dallas_Wings_season",
           "https://www.basketball-reference.com/wnba/teams/DAL/2024.html",
-          "https://www.basketball-reference.com/wnba/teams/DAL/2025.html"
+          "https://www.basketball-reference.com/wnba/teams/DAL/2025.html",
+          "https://en.wikipedia.org/wiki/2026_WNBA_playoffs",
+          "https://en.wikipedia.org/wiki/2026_WNBA_season"
         ],
         "seasons": [
           {
@@ -1328,6 +1250,12 @@
             "result": "Missed playoffs (10-34)",
             "tier": "none",
             "pts": 0
+          },
+          {
+            "season": "2026",
+            "result": "27-17, No. 7 seed; lost the best-of-3 First Round 1-2 to Golden State (first playoff round = quarters per WNBA mapping)",
+            "tier": "quarters",
+            "pts": 4
           }
         ]
       },
@@ -2424,7 +2352,9 @@
         "seasons": [
           {
             "season": "2025-26",
-            "result": "Beat Houston Rockets 4-2 in the First Round, then lost to Oklahoma City Thunder 0-4 in the Western Conference Semifinals. Conference Semifinals = quarters (depth 2 from championship)."
+            "result": "Beat Houston Rockets 4-2 in the First Round, then lost to Oklahoma City Thunder 0-4 in the Western Conference Semifinals. Conference Semifinals = quarters (depth 2 from championship).",
+            "tier": "quarters",
+            "pts": 4
           }
         ]
       },
@@ -2447,7 +2377,9 @@
         "seasons": [
           {
             "season": "2025-26",
-            "result": "Beat Edmonton Oilers 4-2 in the First Round, then lost to Vegas Golden Knights 2-4 in the Second Round. NHL Second Round = quarters (depth 2 from championship)."
+            "result": "Beat Edmonton Oilers 4-2 in the First Round, then lost to Vegas Golden Knights 2-4 in the Second Round. NHL Second Round = quarters (depth 2 from championship).",
+            "tier": "quarters",
+            "pts": 4
           }
         ]
       },
@@ -2469,7 +2401,9 @@
         "seasons": [
           {
             "season": "2025-26",
-            "result": "Lost to Colorado Avalanche 0-4 (swept) in the First Round. NHL First Round = firstRound."
+            "result": "Lost to Colorado Avalanche 0-4 (swept) in the First Round. NHL First Round = firstRound.",
+            "tier": "firstRound",
+            "pts": 2
           }
         ]
       },
@@ -2516,13 +2450,22 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "WNBA seasons strictly after 2025 (none; 2025 WNBA season is not strictly after 2025 and 2026 is in progress)",
+        "window": "WNBA seasons strictly after 2025: 2026",
         "confidence": "high",
         "flags": [
-          "Empty window: only WNBA seasons strictly after 2025 count, and there are none. postResetPPI=0 by construction."
+          "Only WNBA seasons strictly after the 2025 reset count, so the window opens with 2026."
         ],
-        "sources": [],
-        "seasons": []
+        "sources": [
+          "https://en.wikipedia.org/wiki/2026_WNBA_season"
+        ],
+        "seasons": [
+          {
+            "season": "2026",
+            "result": "Missed playoffs (16-28)",
+            "tier": "none",
+            "pts": 0
+          }
+        ]
       },
       "Los Angeles FC": {
         "postResetPPI": 0,
@@ -2613,7 +2556,8 @@
             "seasonYear": 2026,
             "result": "winningRecordNoPlayoff",
             "detail": "Finished 43-39 (10th in the Eastern Conference), a winning record. Qualified for the play-in tournament but lost to the Charlotte Hornets 127-126 in overtime, missing the playoffs for the first time since 2019. The play-in is not a playoff round (per PPI methodology), so a winning team eliminated in the play-in counts as winningRecordNoPlayoff, not firstRound.",
-            "points": 1
+            "tier": "winningRecordNoPlayoff",
+            "pts": 1
           }
         ]
       }
@@ -3653,13 +3597,22 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "after 2025 through 2025 (empty)",
+        "window": "2026",
         "confidence": "high",
         "flags": [
-          "Empty window: countSeasonsAfter=2025 and throughSeason=2025, so no WNBA season qualifies (2025 is not strictly after 2025). 2026 WNBA season is in progress and does not count."
+          "Only WNBA seasons strictly after the 2025 reset count, so the window opens with 2026."
         ],
-        "sources": [],
-        "seasons": []
+        "sources": [
+          "https://en.wikipedia.org/wiki/2026_WNBA_season"
+        ],
+        "seasons": [
+          {
+            "season": "2026",
+            "result": "Missed playoffs (8-36)",
+            "tier": "none",
+            "pts": 0
+          }
+        ]
       },
       "Seattle Sounders FC": {
         "postResetPPI": 0,

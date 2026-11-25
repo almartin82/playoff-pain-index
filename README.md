@@ -51,7 +51,7 @@ Each league's bracket is mapped by depth from its championship:
 | NHL | Stanley Cup Final | Conference Finals | Second Round | First Round |
 | NFL | Super Bowl | Conference Championship | Divisional Round | Wild Card |
 | CFL | Grey Cup | Division Final | Division Semifinal | (usually none) |
-| WNBA | WNBA Finals | Conference Finals / Semifinals | First playoff round | (usually none) |
+| WNBA | WNBA Finals | Conference Finals / Semifinals | First playoff round (Second Round in 2016-2021) | First Round in 2016-2021 only |
 | MLS | MLS Cup | Conference Final | Conference Semifinal | Round One |
 
 ## The data

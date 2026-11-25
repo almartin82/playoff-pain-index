@@ -1,6 +1,6 @@
 {
   "league": "NHL",
-  "updated": "2026-06-16",
+  "updated": "2026-11-25",
   "scoring": "16*Finals + 8*Semis + 4*Quarters + 2*FirstRound + 1*WinningRecordNoPlayoff",
   "teams": [
     {
@@ -146,36 +146,6 @@
       "notes": "Pinned to the published playoff-pain-index site numbers (canonical)."
     },
     {
-      "team": "Dallas Stars",
-      "score": 100,
-      "since": "Since last title in 1999",
-      "lastChampionship": "1999 Stanley Cup",
-      "breakdown": {
-        "finals": 2,
-        "semis": 4,
-        "quarters": 4,
-        "firstRound": 6,
-        "winningRecordNoPlayoff": 8
-      },
-      "confidence": "medium",
-      "flags": [
-        "2004-05 season skipped (NHL lockout, no games played)",
-        "2001-02 winning-record determination uses W=36 vs L=28 in tie era (13 ties, 5 OTL); 36>28 counts as winning record",
-        "2012-13 lockout-shortened season: 22W=22L exactly .500, not counted as winning record",
-        "2016-17: 34W<37L is a losing record, not counted",
-        "2025-26 data sourced from Wikipedia/ESPN; Stars lost first round to Minnesota Wild in 6 games (2-4) -- most recent season, verified"
-      ],
-      "sources": [
-        "https://en.wikipedia.org/wiki/List_of_Dallas_Stars_seasons",
-        "https://en.wikipedia.org/wiki/2025%E2%80%9326_Dallas_Stars_season",
-        "https://en.wikipedia.org/wiki/2024%E2%80%9325_Dallas_Stars_season",
-        "https://records.nhl.com/playoff-summary/stanley-cup-winner?season=19981999",
-        "https://www.hockey-reference.com/boxscores/202009280DAL.html",
-        "https://en.wikipedia.org/wiki/2020_Stanley_Cup_playoffs"
-      ],
-      "notes": "Dallas relocated from Minnesota (as Minnesota North Stars) to Dallas for the 1993-94 season, becoming the Dallas Stars. Their 1999 championship post-dates the relocation, so the drought window correctly starts after the 1999 title. Finals losses: 1999-2000 (vs New Jersey Devils) and 2019-20 (vs Tampa Bay Lightning in COVID bubble). Semis losses (Conference Finals): 2007-08 (vs Detroit Red Wings), 2022-23 (vs Vegas Golden Knights), 2023-24 (vs Edmonton Oilers, lost 2-4), 2024-25 (vs Edmonton Oilers, lost 1-4 in 5 games). Quarters losses (Conference Semifinals / 2nd round): 2000-01 (vs Blues, swept 0-4), 2002-03 (vs Anaheim Ducks), 2015-16 (vs Blues), 2018-19 (vs Blues). First round losses: 2003-04, 2005-06 (both vs Colorado Avalanche), 2006-07 (vs Vancouver Canucks), 2013-14 (vs Anaheim Ducks), 2021-22 (vs Calgary Flames), 2025-26 (vs Minnesota Wild). Winning-record/no-playoff: 2001-02, 2008-09, 2009-10, 2010-11, 2011-12, 2014-15, 2017-18, 2020-21."
-    },
-    {
       "team": "San Jose Sharks",
       "score": 98,
       "since": "Since team was founded in 1991-92",
@@ -198,6 +168,37 @@
         "https://en.wikipedia.org/wiki/2014%E2%80%9315_San_Jose_Sharks_season"
       ],
       "notes": "Pinned to the published playoff-pain-index site numbers (canonical)."
+    },
+    {
+      "team": "Dallas Stars",
+      "score": 96,
+      "since": "Since last title in 1998-99",
+      "lastChampionship": "1999 Stanley Cup",
+      "breakdown": {
+        "finals": 2,
+        "semis": 4,
+        "quarters": 4,
+        "firstRound": 6,
+        "winningRecordNoPlayoff": 4
+      },
+      "confidence": "medium",
+      "flags": [
+        "2004-05 season skipped (NHL lockout, no games played)",
+        "2012-13 lockout-shortened season: 22W=22L exactly .500, not counted as winning record",
+        "2016-17: 34W<37L is a losing record, not counted",
+        "2025-26 data sourced from Wikipedia/ESPN; Stars lost first round to Minnesota Wild in 6 games (2-4) -- most recent season, verified",
+        "Site card (added Oct 31, 2026) counts 4 winning-record seasons without a playoff spot. That matches wins > regulation losses + overtime losses: 2001-02 (36-28-13-5), 2010-11 (42-29-11), 2011-12 (42-35-5), 2017-18 (42-32-8).",
+        "A strict wins > regulation losses rule would also count 2008-09 (36-35-11), 2009-10 (37-31-14), 2014-15 (41-31-10) and 2020-21 (23-19-14), giving 8 and a score of 100."
+      ],
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_Dallas_Stars_seasons",
+        "https://en.wikipedia.org/wiki/2025%E2%80%9326_Dallas_Stars_season",
+        "https://en.wikipedia.org/wiki/2024%E2%80%9325_Dallas_Stars_season",
+        "https://records.nhl.com/playoff-summary/stanley-cup-winner?season=19981999",
+        "https://www.hockey-reference.com/boxscores/202009280DAL.html",
+        "https://en.wikipedia.org/wiki/2020_Stanley_Cup_playoffs"
+      ],
+      "notes": "Pinned to the published playoff-pain-index site numbers (canonical). Dallas relocated from Minnesota (as Minnesota North Stars) to Dallas for the 1993-94 season, becoming the Dallas Stars. Their 1999 championship post-dates the relocation, so the drought window correctly starts after the 1999 title. Finals losses: 1999-2000 (vs New Jersey Devils) and 2019-20 (vs Tampa Bay Lightning in COVID bubble). Semis losses (Conference Finals): 2007-08 (vs Detroit Red Wings), 2022-23 (vs Vegas Golden Knights), 2023-24 (vs Edmonton Oilers, lost 2-4), 2024-25 (vs Edmonton Oilers, lost 1-4 in 5 games). Quarters losses (Conference Semifinals / 2nd round): 2000-01 (vs Blues, swept 0-4), 2002-03 (vs Anaheim Ducks), 2015-16 (vs Blues), 2018-19 (vs Blues). First round losses: 2003-04, 2005-06 (both vs Colorado Avalanche), 2006-07 (vs Vancouver Canucks), 2013-14 (vs Anaheim Ducks), 2021-22 (vs Calgary Flames), 2025-26 (vs Minnesota Wild). Winning-record/no-playoff (site definition, wins > losses + OT losses): 2001-02, 2010-11, 2011-12, 2017-18."
     },
     {
       "team": "New York Rangers",

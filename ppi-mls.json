@@ -1,18 +1,18 @@
 {
   "league": "MLS",
-  "updated": "2026-06-16",
+  "updated": "2026-11-25",
   "scoring": "16*Finals + 8*Semis + 4*Quarters + 2*FirstRound + 1*WinningRecordNoPlayoff",
   "teams": [
     {
       "team": "New England Revolution",
-      "score": 136,
+      "score": 134,
       "since": "Since team was founded in 1996",
       "lastChampionship": "Never won (founded 1996)",
       "breakdown": {
         "finals": 5,
         "semis": 3,
-        "quarters": 7,
-        "firstRound": 2,
+        "quarters": 6,
+        "firstRound": 3,
         "winningRecordNoPlayoff": 0
       },
       "confidence": "high",

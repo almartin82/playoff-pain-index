@@ -105,15 +105,15 @@
         ]
       },
       "Atlanta Dream": {
-        "postResetPPI": 12,
+        "postResetPPI": 28,
         "breakdown": {
-          "finals": 0,
+          "finals": 1,
           "semis": 0,
           "quarters": 3,
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2022 to 2025",
+        "window": "2022 to 2026",
         "confidence": "high",
         "flags": [
           "Per WNBA shallow-bracket mapping (CLAUDE.md / task spec), the first playoff round maps to quarters (4 pts). 2023, 2024, 2025 were all first-round (round of 8) eliminations.",
@@ -123,7 +123,9 @@
           "https://en.wikipedia.org/wiki/2022_Atlanta_Dream_season",
           "https://en.wikipedia.org/wiki/2023_Atlanta_Dream_season",
           "https://en.wikipedia.org/wiki/2024_Atlanta_Dream_season",
-          "https://en.wikipedia.org/wiki/2025_Atlanta_Dream_season"
+          "https://en.wikipedia.org/wiki/2025_Atlanta_Dream_season",
+          "https://en.wikipedia.org/wiki/2026_WNBA_playoffs",
+          "https://en.wikipedia.org/wiki/2026_WNBA_Finals"
         ],
         "seasons": [
           {
@@ -149,6 +151,12 @@
             "result": "Made playoffs as No. 3 seed (30-14, franchise-best); lost best-of-3 First Round 1-2 to Indiana Fever (confirmed complete)",
             "tier": "quarters",
             "pts": 4
+          },
+          {
+            "season": "2026",
+            "result": "30-14, No. 4 seed; beat Washington 2-0 and New York 3-0, lost the WNBA Finals 3-4 to Golden State (Game 7, Oct 31, 2026)",
+            "tier": "finals",
+            "pts": 16
           }
         ]
       },
@@ -1390,21 +1398,23 @@
         ]
       },
       "Dallas Wings": {
-        "postResetPPI": 0,
+        "postResetPPI": 4,
         "breakdown": {
           "finals": 0,
           "semis": 0,
-          "quarters": 0,
+          "quarters": 1,
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2024 through 2025",
+        "window": "2024 through 2026",
         "confidence": "high",
         "flags": [],
         "sources": [
           "https://en.wikipedia.org/wiki/2025_Dallas_Wings_season",
           "https://www.basketball-reference.com/wnba/teams/DAL/2024.html",
-          "https://www.basketball-reference.com/wnba/teams/DAL/2025.html"
+          "https://www.basketball-reference.com/wnba/teams/DAL/2025.html",
+          "https://en.wikipedia.org/wiki/2026_WNBA_playoffs",
+          "https://en.wikipedia.org/wiki/2026_WNBA_season"
         ],
         "seasons": [
           {
@@ -1418,6 +1428,12 @@
             "result": "Missed playoffs (10-34)",
             "tier": "none",
             "pts": 0
+          },
+          {
+            "season": "2026",
+            "result": "27-17, No. 7 seed; lost the best-of-3 First Round 1-2 to Golden State (first playoff round = quarters per WNBA mapping)",
+            "tier": "quarters",
+            "pts": 4
           }
         ]
       },
@@ -2438,7 +2454,9 @@
         "seasons": [
           {
             "season": "2025-26",
-            "result": "Beat Houston Rockets 4-2 in the First Round, then lost to Oklahoma City Thunder 0-4 in the Western Conference Semifinals. Conference Semifinals = quarters (depth 2 from championship)."
+            "result": "Beat Houston Rockets 4-2 in the First Round, then lost to Oklahoma City Thunder 0-4 in the Western Conference Semifinals. Conference Semifinals = quarters (depth 2 from championship).",
+            "tier": "quarters",
+            "pts": 4
           }
         ]
       },
@@ -2461,7 +2479,9 @@
         "seasons": [
           {
             "season": "2025-26",
-            "result": "Beat Edmonton Oilers 4-2 in the First Round, then lost to Vegas Golden Knights 2-4 in the Second Round. NHL Second Round = quarters (depth 2 from championship)."
+            "result": "Beat Edmonton Oilers 4-2 in the First Round, then lost to Vegas Golden Knights 2-4 in the Second Round. NHL Second Round = quarters (depth 2 from championship).",
+            "tier": "quarters",
+            "pts": 4
           }
         ]
       },
@@ -2483,7 +2503,9 @@
         "seasons": [
           {
             "season": "2025-26",
-            "result": "Lost to Colorado Avalanche 0-4 (swept) in the First Round. NHL First Round = firstRound."
+            "result": "Lost to Colorado Avalanche 0-4 (swept) in the First Round. NHL First Round = firstRound.",
+            "tier": "firstRound",
+            "pts": 2
           }
         ]
       },
@@ -2530,13 +2552,22 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "WNBA seasons strictly after 2025 (none; 2025 WNBA season is not strictly after 2025 and 2026 is in progress)",
+        "window": "WNBA seasons strictly after 2025: 2026",
         "confidence": "high",
         "flags": [
-          "Empty window: only WNBA seasons strictly after 2025 count, and there are none. postResetPPI=0 by construction."
+          "Only WNBA seasons strictly after the 2025 reset count, so the window opens with 2026."
         ],
-        "sources": [],
-        "seasons": []
+        "sources": [
+          "https://en.wikipedia.org/wiki/2026_WNBA_season"
+        ],
+        "seasons": [
+          {
+            "season": "2026",
+            "result": "Missed playoffs (16-28)",
+            "tier": "none",
+            "pts": 0
+          }
+        ]
       },
       "Los Angeles FC": {
         "postResetPPI": 0,
@@ -2627,7 +2658,8 @@
             "seasonYear": 2026,
             "result": "winningRecordNoPlayoff",
             "detail": "Finished 43-39 (10th in the Eastern Conference), a winning record. Qualified for the play-in tournament but lost to the Charlotte Hornets 127-126 in overtime, missing the playoffs for the first time since 2019. The play-in is not a playoff round (per PPI methodology), so a winning team eliminated in the play-in counts as winningRecordNoPlayoff, not firstRound.",
-            "points": 1
+            "tier": "winningRecordNoPlayoff",
+            "pts": 1
           }
         ]
       }
@@ -2635,18 +2667,19 @@
     "Milwaukee": {},
     "Minneapolis": {
       "Minnesota Timberwolves": {
-        "postResetPPI": 47,
+        "postResetPPI": 49,
         "breakdown": {
           "finals": 0,
           "semis": 3,
           "quarters": 1,
-          "firstRound": 9,
+          "firstRound": 10,
           "winningRecordNoPlayoff": 1
         },
         "window": "1991-92 - 2025-26",
         "confidence": "high",
         "flags": [
-          "Basketball-Reference returned HTTP 403; verified against Wikipedia franchise season table and the 2025-26 season page, which agree."
+          "Basketball-Reference returned HTTP 403; verified against Wikipedia franchise season table and the 2025-26 season page, which agree.",
+          "Corrected 2026-11-25: the stored total (47) did not match the season rows below, which sum to 49. The total now recomputes from the rows."
         ],
         "sources": [
           "https://en.wikipedia.org/wiki/List_of_Minnesota_Timberwolves_seasons",
@@ -2866,13 +2899,13 @@
         ]
       },
       "Minnesota Wild": {
-        "postResetPPI": 50,
+        "postResetPPI": 51,
         "breakdown": {
           "finals": 0,
           "semis": 1,
           "quarters": 3,
           "firstRound": 12,
-          "winningRecordNoPlayoff": 6
+          "winningRecordNoPlayoff": 7
         },
         "window": "1991-92 - 2025-26",
         "confidence": "high",
@@ -2880,7 +2913,8 @@
           "2004-05 NHL season cancelled (lockout); excluded, scores nothing.",
           "Combines Minnesota Wild with Minnesota North Stars' final two Minnesota seasons (1991-92, 1992-93) per CLAUDE.md expansion-replacement rule.",
           "North Stars 1992-93 (36-38-10) is a losing record, so it scores 0, not winningRecordNoPlayoff.",
-          "2019-20 bubble qualifying-round loss classified as firstRound (final-16 depth)."
+          "2019-20 bubble qualifying-round loss classified as firstRound (final-16 depth).",
+          "Corrected 2026-11-25: the stored total (50) did not match the season rows below, which sum to 51. The total now recomputes from the rows."
         ],
         "sources": [
           "https://en.wikipedia.org/wiki/1991%E2%80%9392_Minnesota_North_Stars_season",
@@ -4064,13 +4098,22 @@
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "after 2025 through 2025 (empty)",
+        "window": "2026",
         "confidence": "high",
         "flags": [
-          "Empty window: countSeasonsAfter=2025 and throughSeason=2025, so no WNBA season qualifies (2025 is not strictly after 2025). 2026 WNBA season is in progress and does not count."
+          "Only WNBA seasons strictly after the 2025 reset count, so the window opens with 2026."
         ],
-        "sources": [],
-        "seasons": []
+        "sources": [
+          "https://en.wikipedia.org/wiki/2026_WNBA_season"
+        ],
+        "seasons": [
+          {
+            "season": "2026",
+            "result": "Missed playoffs (8-36)",
+            "tier": "none",
+            "pts": 0
+          }
+        ]
       },
       "Seattle Sounders FC": {
         "postResetPPI": 0,

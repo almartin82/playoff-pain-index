@@ -1,16 +1,16 @@
 {
   "league": "CFL",
-  "updated": "2026-06-16",
+  "updated": "2026-11-25",
   "scoring": "16*Finals + 8*Semis + 4*Quarters + 2*FirstRound + 1*WinningRecordNoPlayoff",
   "teams": [
     {
       "team": "Hamilton Tiger-Cats",
-      "score": 148,
+      "score": 132,
       "since": "Since last title in 1999",
       "lastChampionship": "1999 Grey Cup",
       "breakdown": {
         "finals": 4,
-        "semis": 7,
+        "semis": 5,
         "quarters": 7,
         "firstRound": 0,
         "winningRecordNoPlayoff": 0
@@ -25,7 +25,7 @@
         "https://en.wikipedia.org/wiki/2011_Hamilton_Tiger-Cats_season",
         "https://en.wikipedia.org/wiki/2016_Hamilton_Tiger-Cats_season"
       ],
-      "notes": "Pinned to the published playoff-pain-index site numbers (canonical). NOTE: independent research found 132 (Semis=5, not 7) with primary-source support; pinned value follows the live site."
+      "notes": "Pinned to the published playoff-pain-index site numbers (canonical). The site moved from 148 to 132 (semis 7 to 5) on Oct 31, 2026, which matches independent research: the 2009 and 2010 exits were East Semi-Finals (quarters), not East Finals."
     },
     {
       "team": "BC Lions",

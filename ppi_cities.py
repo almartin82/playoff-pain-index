@@ -40,6 +40,7 @@ Usage: python3 ppi_cities.py [N]      most painful, top N (default 20)
        python3 ppi_cities.py --least [min_teams]
        python3 ppi_cities.py --json    (re)write ppi-cities.json
        python3 ppi_cities.py --html    print index.html table rows
+       python3 ppi_cities.py --check   verify the data files and index.html agree
 """
 import json, re, sys
 
@@ -97,6 +98,7 @@ CITY = {
     "Pittsburgh Pirates":"Pittsburgh","Pittsburgh Penguins":"Pittsburgh","Pittsburgh Steelers":"Pittsburgh",
     "Detroit Tigers":"Detroit","Detroit Pistons":"Detroit","Detroit Red Wings":"Detroit","Detroit Lions":"Detroit",
     "Houston Astros":"Houston","Houston Rockets":"Houston","Houston Texans":"Houston","Houston Dynamo":"Houston",
+    "Houston (formerly Connecticut Sun)":"Houston",   # relocating for 2027; score reset to 0
     "Cleveland Guardians":"Cleveland","Cleveland Cavaliers":"Cleveland","Cleveland Browns":"Cleveland",
     "Seattle Mariners":"Seattle","Seattle Seahawks":"Seattle","Seattle Kraken":"Seattle",
     "Seattle Storm":"Seattle","Seattle Sounders FC":"Seattle",
@@ -126,7 +128,7 @@ CITY = {
     "San Antonio Spurs":"San Antonio","Memphis Grizzlies":"Memphis",
     "Oklahoma City Thunder":"Oklahoma City","Green Bay Packers":"Green Bay","Jacksonville Jaguars":"Jacksonville",
     "Sacramento Kings":"Sacramento","Athletics":"Sacramento",
-    "Austin FC":"Austin","Connecticut Sun":"Connecticut",
+    "Austin FC":"Austin",
     # Canadian metros
     "Montreal Canadiens":"Montreal","Montreal Alouettes":"Montreal","CF Montreal":"Montreal",
     "Vancouver Canucks":"Vancouver","Vancouver Whitecaps FC":"Vancouver","BC Lions":"Vancouver",
@@ -145,7 +147,7 @@ JUDGMENT = [
     "Bay Area merges SF + San Jose + Santa Clara (Giants/Warriors/Valkyries + Sharks/Earthquakes/49ers).",
     "Athletics mapped to Sacramento (their 2025 interim home) alongside the Kings.",
     "Hamilton kept SEPARATE from Toronto (it is its own CFL market, ~70km away).",
-    "Connecticut Sun kept as its own market (not New York or Boston).",
+    "The Connecticut Sun relocate to Houston for 2027: the franchise counts as Houston at 0 and Connecticut drops out.",
     "BC Lions count as Vancouver; Carolina Panthers/Hornets/Charlotte FC as Charlotte; Carolina Hurricanes as Raleigh (separate).",
     "City reset uses BIG-FOUR titles only (MLB/NBA/NHL/NFL); a WNBA/MLS/CFL title does not reset a city.",
 ]
@@ -402,7 +404,93 @@ def _mode_arg(default="big4"):
     return "all" if "--all" in sys.argv else default
 
 
+TIERS = ("finals", "semis", "quarters", "firstRound", "winningRecordNoPlayoff")
+WEIGHTS = dict(zip(TIERS, (16, 8, 4, 2, 1)))
+
+
+def _ppi(b):
+    return sum(WEIGHTS[k] * b[k] for k in TIERS)
+
+
+def _site_cards(page):
+    """[(team, score, [five counts])] parsed from the team cards on index.html."""
+    out = []
+    for blk in page.split('<div class="team-card">')[1:]:
+        name = re.search(r'class="team-name">([^<]*)<', blk).group(1)
+        score = int(re.search(r'class="ppi-score">(\d+)', blk).group(1))
+        vals = [int(v) for v in re.findall(r'class="value">\s*(\d+)', blk)[:5]]
+        out.append((name, score, vals))
+    return out
+
+
+def check():
+    """Fail loudly when the data files and the page disagree. Returns the problem
+    list; run after every data change (python3 ppi_cities.py --check)."""
+    bad, teams, newest = [], {}, ""
+    for lg in LEAGUES:
+        d = json.load(open(f"ppi-{lg}.json"))
+        newest = max(newest, d["updated"])
+        for t in d["teams"]:
+            teams[t["team"]] = t
+            b = t["breakdown"]
+            if any(not isinstance(b[k], int) or b[k] < 0 for k in TIERS):
+                bad.append(f"{t['team']}: negative or non-integer count")
+            elif _ppi(b) != t["score"]:
+                bad.append(f"{t['team']}: stored score {t['score']} != {_ppi(b)} from its breakdown")
+            if t["team"] not in CITY:
+                bad.append(f"{t['team']}: not mapped to a metro in CITY")
+    # every card on the page matches its pinned JSON entry, and nothing else is pinned
+    page = open("index.html").read()
+    on_site = set()
+    for name, score, vals in _site_cards(page):
+        t = teams.get(name) or teams.get(name.split(" + ")[0])
+        if t is None:
+            bad.append(f"site card {name}: no JSON entry"); continue
+        on_site.add(t["team"])
+        if [t["breakdown"][k] for k in TIERS] != vals or t["score"] != score or _ppi(t["breakdown"]) != score:
+            bad.append(f"site card {name}: {vals}={score} disagrees with JSON {t['breakdown']}={t['score']}")
+        if not t["notes"].startswith("Pinned"):
+            bad.append(f"{t['team']}: on the site but not marked as pinned")
+    for name, t in teams.items():
+        if t["notes"].startswith("Pinned") and name not in on_site:
+            bad.append(f"{name}: marked as pinned but not on the site")
+    # post-reset ledgers: total == breakdown == season rows, and never above the full PPI
+    for path in ("ppi-cities-postreset.json", "ppi-cities-postreset-all.json"):
+        for city, recs in json.load(open(path))["cities"].items():
+            for name, r in recs.items():
+                rows = {k: sum(1 for x in r["seasons"] if x.get("tier") == k) for k in TIERS}
+                pts = sum(x.get("pts", WEIGHTS.get(x.get("tier"), 0)) for x in r["seasons"])
+                if not (_ppi(r["breakdown"]) == r["postResetPPI"] == _ppi(rows) == pts):
+                    bad.append(f"{path} {name}: total {r['postResetPPI']}, breakdown {_ppi(r['breakdown'])}, "
+                               f"season rows {_ppi(rows)}, row points {pts}")
+                if name not in teams:
+                    bad.append(f"{path} {name}: no such team in the league files")
+                elif r["postResetPPI"] > teams[name]["score"]:
+                    bad.append(f"{path} {name}: post-reset {r['postResetPPI']} exceeds full PPI {teams[name]['score']}")
+    # the page's cities tables and footer date are current
+    bodies = re.findall(r'<tbody class="mode-(?:big4|all)"(?: hidden)?>\n(.*?)\s*</tbody>', page, re.S)
+    want = []
+    for mode in ("big4", "all"):
+        ranked, _ = collect(mode)
+        want.append((_html_rows(most_painful(ranked), mode), _html_rows(least_painful(ranked), mode)))
+    want = [want[0][0], want[1][0], want[0][1], want[1][1]]
+    if [b.strip() for b in bodies] != [w.strip() for w in want]:
+        bad.append("index.html cities tables are stale: paste the --html output again")
+    m = re.search(r"Last updated: (\w+) (\d+), (\d{4})", page)
+    months = "January February March April May June July August September October November December".split()
+    footer = f"{m.group(3)}-{months.index(m.group(1)) + 1:02d}-{int(m.group(2)):02d}" if m else None
+    if footer != newest:
+        bad.append(f"index.html footer date {footer} != newest JSON updated {newest}")
+    return bad
+
+
 def main():
+    if "--check" in sys.argv:
+        bad = check()
+        for b in bad:
+            print("FAIL", b)
+        print("check:", "OK" if not bad else f"{len(bad)} problem(s)")
+        sys.exit(1 if bad else 0)
     if "--json" in sys.argv:
         write_json("big4"); write_json("all"); return
     if "--html" in sys.argv:

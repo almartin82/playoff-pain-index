@@ -47,13 +47,14 @@ name, which is what makes older/odd formats and different leagues comparable.
 - Designated expansion-replacement cities combine with the team that left
   (Minnesota Wild + North Stars; Houston Texans + Oilers).
 - Only completed seasons score. A league's season counts once its championship has
-  been decided, not when the calendar year ends. As of 2026-10-28 the data runs
+  been decided, not when the calendar year ends. As of 2026-11-25 the data runs
   through: MLB 2026 (Brewers won the World Series), NBA 2025-26 (Knicks), NHL
   2025-26 (Hurricanes), NFL 2025 (Seahawks, Super Bowl LX), CFL 2025
-  (Roughriders), WNBA 2025 (Aces), MLS 2025 (Inter Miami). The 2026 WNBA Finals
-  (Golden State vs Atlanta) were still in progress, and the 2026 CFL and MLS
-  seasons and the 2026 NFL season had not finished. Update this line whenever a
-  league's latest season is added.
+  (Roughriders), WNBA 2026 (Valkyries beat the Dream 4-3), MLS 2025 (Inter
+  Miami). The 2026 CFL season has finished (the Grey Cup was played Nov 15, 2026)
+  but is NOT yet in the data. MLS Cup 2026 is scheduled for Dec 18, 2026 and the
+  2026 NFL season had not finished. Update this line whenever a league's latest
+  season is added.
 
 ### Per-league round mapping
 
@@ -70,15 +71,18 @@ name, which is what makes older/odd formats and different leagues comparable.
   Divisional=quarters, Wild Card=firstRound.
 - **CFL:** Grey Cup, Division Final=semis, Division Semifinal=quarters. Small bracket,
   so firstRound and winningRecordNoPlayoff are usually 0.
-- **WNBA:** WNBA Finals, Conference Finals/Semifinals=semis, first playoff round=quarters.
-  Shallow bracket, so firstRound and winningRecordNoPlayoff are usually 0.
+- **WNBA:** WNBA Finals, Conference Finals/Semifinals=semis. In a three-round
+  bracket (through 2015, and 2022 on) the first playoff round=quarters. The
+  2016-2021 brackets had four rounds: Second Round=quarters and First
+  Round=firstRound (a top seed with a bye that loses its first game in the Second
+  Round is a quarters loss). Outside 2016-2021 firstRound is 0.
 - **MLS:** MLS Cup, Conference Final=semis, Conference Semifinal=quarters, Round
   One=firstRound. Watch rebrands/relocations (MetroStars to Red Bulls, Dallas Burn
   to FC Dallas, San Jose's 2008 re-founding, Houston Dynamo from the relocated San Jose).
 
 ## Files
 
-- `index.html` is the live site and the source of truth for the 25 teams it lists.
+- `index.html` is the live site and the source of truth for the 26 teams it lists.
 - `ppi-<league>.json` holds the computed dataset, one file per league. Shape:
   `{ league, updated, scoring, teams: [ { team, score, since, lastChampionship,
   breakdown:{finals,semis,quarters,firstRound,winningRecordNoPlayoff}, confidence,
@@ -99,11 +103,12 @@ name, which is what makes older/odd formats and different leagues comparable.
 
 ## The pinning convention
 
-The 20 teams that also appear on `index.html` are **pinned** to the site's
+The 26 teams that appear on `index.html` are **pinned** to the site's
 published numbers so the dataset never disagrees with the live page. A pinned
 team's `notes` begins with "Pinned to the published playoff-pain-index site
 numbers". When research and the site disagree, keep the pin and record the
-discrepancy in `notes` (see Hamilton Tiger-Cats and the New England Revolution).
+discrepancy in `notes` (see the Atlanta Dream and the Dallas Stars). When the site
+adds, drops or changes a card, move the pin with it.
 If you ever decide to correct the site itself, update `index.html` and the pin
 together.
 
@@ -138,6 +143,14 @@ uncertainty, pin the `index.html` teams, and verify every championship reset
 against a live source before setting a team to 0.
 
 ## Verify a few invariants after any change
+
+Run `python3 ppi_cities.py --check` first. It exits non-zero and names the
+problem when a stored score does not recompute from its breakdown, a site card
+disagrees with its pinned JSON entry, a post-reset ledger's total does not match
+its season rows (or exceeds the team's full PPI), the cities tables on
+`index.html` are stale, or the footer date is not the newest `updated` date. It
+cannot tell whether a season was mapped to the right tier, so still read the
+round mapping above when adding a season.
 
 - `python3 -c "import json; [json.load(open(f'ppi-{l}.json')) for l in
   ('mlb','nba','nhl','nfl','cfl','wnba','mls')]"` parses every file.

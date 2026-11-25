@@ -1,17 +1,17 @@
 {
   "league": "NBA",
-  "updated": "2026-06-16",
+  "updated": "2026-11-25",
   "scoring": "16*Finals + 8*Semis + 4*Quarters + 2*FirstRound + 1*WinningRecordNoPlayoff",
   "teams": [
     {
       "team": "Phoenix Suns",
-      "score": 174,
+      "score": 178,
       "since": "Since team was founded in 1968",
       "lastChampionship": "Never won (founded 1968)",
       "breakdown": {
         "finals": 3,
         "semis": 7,
-        "quarters": 10,
+        "quarters": 11,
         "firstRound": 13,
         "winningRecordNoPlayoff": 4
       },
