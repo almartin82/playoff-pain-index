@@ -389,14 +389,15 @@
         "window": "2022-23 to 2025-26",
         "confidence": "high",
         "flags": [
-          "All four seasons missed the playoffs. NHL standings are by points, not win-loss, and the per-league mapping does not assign a winningRecordNoPlayoff tier for the NHL (that tier is mainly MLB/NFL). 2025-26 was 39-35-8 (more wins than regulation losses by points), but under the NHL mapping it scores 0 as a missed-playoff season."
+          "All four seasons missed the playoffs. 2025-26 was 39-35-8: more wins than regulation losses, but 39 wins against 43 regulation + overtime losses is not a winning record under the NHL rule, so it scores 0."
         ],
         "sources": [
           "https://en.wikipedia.org/wiki/2022%E2%80%9323_San_Jose_Sharks_season",
           "https://en.wikipedia.org/wiki/2023%E2%80%9324_San_Jose_Sharks_season",
           "https://en.wikipedia.org/wiki/2024%E2%80%9325_San_Jose_Sharks_season",
           "https://en.wikipedia.org/wiki/2025%E2%80%9326_San_Jose_Sharks_season",
-          "https://www.nhl.com/sharks/news/why-san-jose-sharks-are-eliminated-from-2025-2026-postseason-race-x9701"
+          "https://www.nhl.com/sharks/news/why-san-jose-sharks-are-eliminated-from-2025-2026-postseason-race-x9701",
+          "https://api.nhle.com/stats/rest/en/team/summary (NHL stats API: regular-season W-L-T-OTL by season, and which clubs played a postseason game)"
         ],
         "seasons": [
           {
@@ -562,12 +563,13 @@
         "flags": [],
         "sources": [
           "https://en.wikipedia.org/wiki/2024%E2%80%9325_Boston_Bruins_season",
-          "https://www.nhl.com/news/boston-bruins-remain-proud-of-2025-26-season-after-being-eliminated-in-playoffs-first-round"
+          "https://www.nhl.com/news/boston-bruins-remain-proud-of-2025-26-season-after-being-eliminated-in-playoffs-first-round",
+          "https://api.nhle.com/stats/rest/en/team/summary (NHL stats API: regular-season W-L-T-OTL by season, and which clubs played a postseason game)"
         ],
         "seasons": [
           {
             "season": "2024-25",
-            "result": "Missed playoffs (33-39-10, losing record) - scores 0; NHL has no winningRecordNoPlayoff tier and record was losing anyway",
+            "result": "Missed playoffs (33-39-10, losing record) - scores 0",
             "tier": "none",
             "pts": 0
           },
@@ -2899,13 +2901,13 @@
         ]
       },
       "Minnesota Wild": {
-        "postResetPPI": 51,
+        "postResetPPI": 44,
         "breakdown": {
           "finals": 0,
           "semis": 1,
           "quarters": 3,
           "firstRound": 12,
-          "winningRecordNoPlayoff": 7
+          "winningRecordNoPlayoff": 0
         },
         "window": "1991-92 - 2025-26",
         "confidence": "high",
@@ -2914,7 +2916,7 @@
           "Combines Minnesota Wild with Minnesota North Stars' final two Minnesota seasons (1991-92, 1992-93) per CLAUDE.md expansion-replacement rule.",
           "North Stars 1992-93 (36-38-10) is a losing record, so it scores 0, not winningRecordNoPlayoff.",
           "2019-20 bubble qualifying-round loss classified as firstRound (final-16 depth).",
-          "Corrected 2026-11-25: the stored total (50) did not match the season rows below, which sum to 51. The total now recomputes from the rows."
+          "NHL winning-record rule: wins must exceed regulation plus overtime/shootout losses (ties count as neither). Recounted 2026-11-25: 7 missed-playoff seasons in this window had more wins than regulation losses only, and no longer score."
         ],
         "sources": [
           "https://en.wikipedia.org/wiki/1991%E2%80%9392_Minnesota_North_Stars_season",
@@ -2923,7 +2925,8 @@
           "https://en.wikipedia.org/wiki/2019%E2%80%9320_Minnesota_Wild_season",
           "https://en.wikipedia.org/wiki/2024%E2%80%9325_Minnesota_Wild_season",
           "https://en.wikipedia.org/wiki/2025%E2%80%9326_Minnesota_Wild_season",
-          "https://www.nhl.com/news/minnesota-wild-colorado-avalanche-game-5-recap-may-13-2026"
+          "https://www.nhl.com/news/minnesota-wild-colorado-avalanche-game-5-recap-may-13-2026",
+          "https://api.nhle.com/stats/rest/en/team/summary (NHL stats API: regular-season W-L-T-OTL by season, and which clubs played a postseason game)"
         ],
         "seasons": [
           {
@@ -2958,15 +2961,15 @@
           },
           {
             "season": "2003-04",
-            "result": "Missed playoffs with winning record (30-29-20-3)",
-            "tier": "winningRecordNoPlayoff",
-            "pts": 1
+            "result": "Missed playoffs (30-29-20-3: 30 wins, 32 regulation + overtime losses; not a winning record)",
+            "tier": "none",
+            "pts": 0
           },
           {
             "season": "2005-06",
-            "result": "Missed playoffs with winning record (38-36-8)",
-            "tier": "winningRecordNoPlayoff",
-            "pts": 1
+            "result": "Missed playoffs (38-36-8: 38 wins, 44 losses; not a winning record)",
+            "tier": "none",
+            "pts": 0
           },
           {
             "season": "2006-07",
@@ -2982,21 +2985,21 @@
           },
           {
             "season": "2008-09",
-            "result": "Missed playoffs with winning record (40-33-9)",
-            "tier": "winningRecordNoPlayoff",
-            "pts": 1
+            "result": "Missed playoffs (40-33-9: 40 wins, 42 losses; not a winning record)",
+            "tier": "none",
+            "pts": 0
           },
           {
             "season": "2009-10",
-            "result": "Missed playoffs with winning record (38-36-8)",
-            "tier": "winningRecordNoPlayoff",
-            "pts": 1
+            "result": "Missed playoffs (38-36-8: 38 wins, 44 losses; not a winning record)",
+            "tier": "none",
+            "pts": 0
           },
           {
             "season": "2010-11",
-            "result": "Missed playoffs with winning record (39-35-8)",
-            "tier": "winningRecordNoPlayoff",
-            "pts": 1
+            "result": "Missed playoffs (39-35-8: 39 wins, 43 losses; not a winning record)",
+            "tier": "none",
+            "pts": 0
           },
           {
             "season": "2011-12",
@@ -3042,9 +3045,9 @@
           },
           {
             "season": "2018-19",
-            "result": "Missed playoffs with winning record (37-36-9)",
-            "tier": "winningRecordNoPlayoff",
-            "pts": 1
+            "result": "Missed playoffs (37-36-9: 37 wins, 45 losses; not a winning record)",
+            "tier": "none",
+            "pts": 0
           },
           {
             "season": "2019-20",
@@ -3072,9 +3075,9 @@
           },
           {
             "season": "2023-24",
-            "result": "Missed playoffs with winning record (39-34-9)",
-            "tier": "winningRecordNoPlayoff",
-            "pts": 1
+            "result": "Missed playoffs (39-34-9: 39 wins, 43 losses; not a winning record)",
+            "tier": "none",
+            "pts": 0
           },
           {
             "season": "2024-25",
@@ -3505,22 +3508,24 @@
         ]
       },
       "Philadelphia Flyers": {
-        "postResetPPI": 0,
+        "postResetPPI": 4,
         "breakdown": {
           "finals": 0,
           "semis": 0,
-          "quarters": 0,
+          "quarters": 1,
           "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2024-25 through 2025-26 (2025-26 in progress, does not count)",
+        "window": "2024-25 through 2025-26",
         "confidence": "high",
         "flags": [
-          "2025-26 season in progress (throughSeason 2026) and does not count under PPI rules."
+          "Corrected 2026-11-25: this ledger still listed 2025-26 as in progress. The season finished with a Second Round loss to Carolina (quarters)."
         ],
         "sources": [
           "https://en.wikipedia.org/wiki/2024%E2%80%9325_Philadelphia_Flyers_season",
-          "https://www.nhl.com/news/why-philadelphia-flyers-are-eliminated-from-2024-2025-postseason-race"
+          "https://www.nhl.com/news/why-philadelphia-flyers-are-eliminated-from-2024-2025-postseason-race",
+          "https://api-web.nhle.com/v1/playoff-bracket/2026 (NHL playoff bracket)",
+          "https://api.nhle.com/stats/rest/en/team/summary (NHL stats API: regular-season W-L-T-OTL by season, and which clubs played a postseason game)"
         ],
         "seasons": [
           {
@@ -3528,6 +3533,12 @@
             "result": "Missed playoffs, finished 33-39-10 (losing record), 8th in Metropolitan Division, 16th in Eastern Conference",
             "tier": "none",
             "pts": 0
+          },
+          {
+            "season": "2025-26",
+            "result": "Beat Pittsburgh 4-2 in the First Round, then swept 0-4 by Carolina in the Second Round",
+            "tier": "quarters",
+            "pts": 4
           }
         ]
       },
@@ -4606,7 +4617,8 @@
         "sources": [
           "https://champsorchumps.us/team/nhl/washington-capitals/playoff-series",
           "https://en.wikipedia.org/wiki/2022%E2%80%9323_Washington_Capitals_season",
-          "https://www.nhl.com/news/why-washington-capitals-are-eliminated-from-2025-2026-postseason-race"
+          "https://www.nhl.com/news/why-washington-capitals-are-eliminated-from-2025-2026-postseason-race",
+          "https://api.nhle.com/stats/rest/en/team/summary (NHL stats API: regular-season W-L-T-OTL by season, and which clubs played a postseason game)"
         ],
         "seasons": [
           {
@@ -4647,7 +4659,7 @@
           },
           {
             "season": "2025-26",
-            "result": "Missed playoffs with a winning record (42-30-9, 42 wins vs 39 losses)",
+            "result": "Missed playoffs with a winning record (43-30-9: 43 wins, 39 regulation + overtime losses)",
             "tier": "winningRecordNoPlayoff",
             "pts": 1
           }

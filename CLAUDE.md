@@ -33,7 +33,7 @@ PPI = 16*finals + 8*semis + 4*quarters + 2*firstRound + 1*winningRecordNoPlayoff
 | `semis` | lost the round before the final (final 4) |
 | `quarters` | lost two rounds before the final (final 8) |
 | `firstRound` | lost in the first playoff round (final 16) |
-| `winningRecordNoPlayoff` | winning regular-season record (more wins than losses), missed the playoffs |
+| `winningRecordNoPlayoff` | winning regular-season record (more wins than losses, with every loss counted), missed the playoffs. In the NHL: wins > regulation losses + overtime/shootout losses |
 
 Tiers are assigned by **depth from the championship**, not by a round's literal
 name, which is what makes older/odd formats and different leagues comparable.
@@ -66,6 +66,13 @@ name, which is what makes older/odd formats and different leagues comparable.
   count for pre-1976 droughts (e.g. the Pacers' drought dates to their 1973 ABA title).
 - **NHL:** Stanley Cup Final, Conference Finals=semis, Second Round=quarters, First
   Round=firstRound. Formats varied a lot (Original Six, division era); map by depth.
+  The 2019-20 qualifying round counts as a playoff round (a loss there is a
+  firstRound loss). **Winning record:** a missed-playoff season scores only when
+  wins > regulation losses + overtime/shootout losses. Ties (through 2003-04)
+  count as neither. Never use points percentage or wins > regulation losses: the
+  overtime-loss point puts most teams "above .500" (a 41-27-14 team has 96 points
+  and 41 wins against 41 losses, and scores 0). Every counted season is listed
+  with its record in the team's `winningRecordNoPlayoffSeasons`.
 - **NFL:** Super Bowl (or pre-1966 league championship), Conference Championship=semis,
   Divisional=quarters, Wild Card=firstRound.
 - **CFL:** Grey Cup, Division Final=semis, Division Semifinal=quarters. Small bracket,
@@ -86,7 +93,10 @@ name, which is what makes older/odd formats and different leagues comparable.
   `{ league, updated, scoring, teams: [ { team, score, since, lastChampionship,
   breakdown:{finals,semis,quarters,firstRound,winningRecordNoPlayoff}, confidence,
   flags, sources, notes } ] }`. The optional `methodologyNote` carries a
-  league-level caveat.
+  league-level caveat. NHL teams also carry `winningRecordNoPlayoffSeasons`
+  (`[{season, w, l, t, otl}]`, one row per counted season) and, on a pinned card
+  that shows more seasons than the rule finds, `winningRecordSiteGap` (the
+  number of seasons on the card that the rule does not account for).
 - `ppi_query.py` reads a league file, fuzzy-matches a team, and **recomputes the
   score from `breakdown`**. Always trust the recomputed score over a stored one.
 - `.claude/skills/ppi-<league>/SKILL.md` are thin wrappers that call
@@ -147,9 +157,15 @@ Run `python3 ppi_cities.py --check` first. It exits non-zero and names the
 problem when a stored score does not recompute from its breakdown, a site card
 disagrees with its pinned JSON entry, a post-reset ledger's total does not match
 its season rows (or exceeds the team's full PPI), the cities tables on
-`index.html` are stale, or the footer date is not the newest `updated` date. It
-cannot tell whether a season was mapped to the right tier, so still read the
-round mapping above when adding a season.
+`index.html` are stale, or the footer date is not the newest `updated` date. For
+the NHL it also fails when a season listed in `winningRecordNoPlayoffSeasons`
+breaks the winning-record rule, when the list length (plus any declared
+`winningRecordSiteGap`) differs from the breakdown count, or when a city ledger
+scores a winning-record season the team's list does not have (or the reverse).
+It cannot tell whether a season was mapped to the right tier, and it cannot see a
+qualifying NHL season that was never listed, so still read the round mapping
+above when adding a season and check each missed-playoff record against the
+standings.
 
 - `python3 -c "import json; [json.load(open(f'ppi-{l}.json')) for l in
   ('mlb','nba','nhl','nfl','cfl','wnba','mls')]"` parses every file.

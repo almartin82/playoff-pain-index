@@ -39,6 +39,9 @@ Rules:
   the Wild; Houston combines the Texans and Oilers).
 - The winning-record-no-playoff bonus matters most in MLB and the NFL, whose
   playoff fields were historically small.
+- In the NHL a winning record means more wins than regulation losses and
+  overtime/shootout losses combined (ties count as neither). A 41-27-14 team has
+  96 points but 41 wins against 41 losses, so it does not score.
 
 ### Round mapping per league
 

@@ -41,6 +41,7 @@ Usage: python3 ppi_cities.py [N]      most painful, top N (default 20)
        python3 ppi_cities.py --json    (re)write ppi-cities.json
        python3 ppi_cities.py --html    print index.html table rows
        python3 ppi_cities.py --check   verify the data files and index.html agree
+                                       (incl. the NHL winning-record rule)
 """
 import json, re, sys
 
@@ -412,6 +413,40 @@ def _ppi(b):
     return sum(WEIGHTS[k] * b[k] for k in TIERS)
 
 
+def nhl_winning_record(s):
+    """The NHL winning-record rule: more wins than losses, with every loss counted.
+    Wins must exceed regulation losses + overtime/shootout losses; ties are neither."""
+    return s["w"] > s["l"] + s["otl"]
+
+
+def _check_nhl_winning(t):
+    """Problems with one NHL team's winning-record-no-playoff count. Every counted
+    season is listed with its record in winningRecordNoPlayoffSeasons and must pass
+    the rule. A pinned site card may show more seasons than the rule finds; that
+    difference has to be declared in winningRecordSiteGap, never left silent.
+    This cannot see a qualifying season that was never listed."""
+    bad, name = [], t["team"]
+    rows = t.get("winningRecordNoPlayoffSeasons")
+    if rows is None:
+        return [f"{name}: no winningRecordNoPlayoffSeasons list"]
+    for s in rows:
+        if not nhl_winning_record(s):
+            bad.append(f"{name}: {s['season']} ({s['w']}-{s['l']}-{s['t']}-{s['otl']}) is listed as a "
+                       f"winning record but has {s['w']} wins against {s['l'] + s['otl']} losses")
+    labels = [s["season"] for s in rows]
+    if len(set(labels)) != len(labels):
+        bad.append(f"{name}: a season is listed twice in winningRecordNoPlayoffSeasons")
+    gap = t.get("winningRecordSiteGap", 0)
+    if gap and not t["notes"].startswith("Pinned"):
+        bad.append(f"{name}: winningRecordSiteGap is only for pinned site teams")
+    if not isinstance(gap, int) or gap < 0:
+        bad.append(f"{name}: winningRecordSiteGap must be a non-negative integer")
+    elif len(rows) + gap != t["breakdown"]["winningRecordNoPlayoff"]:
+        bad.append(f"{name}: breakdown counts {t['breakdown']['winningRecordNoPlayoff']} winning-record "
+                   f"seasons but {len(rows)} are listed" + (f" (+{gap} declared site gap)" if gap else ""))
+    return bad
+
+
 def _site_cards(page):
     """[(team, score, [five counts])] parsed from the team cards on index.html."""
     out = []
@@ -426,12 +461,15 @@ def _site_cards(page):
 def check():
     """Fail loudly when the data files and the page disagree. Returns the problem
     list; run after every data change (python3 ppi_cities.py --check)."""
-    bad, teams, newest = [], {}, ""
+    bad, teams, newest, nhl = [], {}, "", {}
     for lg in LEAGUES:
         d = json.load(open(f"ppi-{lg}.json"))
         newest = max(newest, d["updated"])
         for t in d["teams"]:
             teams[t["team"]] = t
+            if lg == "nhl":
+                nhl[t["team"]] = {s["season"] for s in t.get("winningRecordNoPlayoffSeasons", [])}
+                bad += _check_nhl_winning(t)
             b = t["breakdown"]
             if any(not isinstance(b[k], int) or b[k] < 0 for k in TIERS):
                 bad.append(f"{t['team']}: negative or non-integer count")
@@ -463,6 +501,13 @@ def check():
                 if not (_ppi(r["breakdown"]) == r["postResetPPI"] == _ppi(rows) == pts):
                     bad.append(f"{path} {name}: total {r['postResetPPI']}, breakdown {_ppi(r['breakdown'])}, "
                                f"season rows {_ppi(rows)}, row points {pts}")
+                if name in nhl:     # ledger rows follow the same winning-record rule
+                    for x in r["seasons"]:
+                        counted = x.get("tier") == "winningRecordNoPlayoff"
+                        if counted != (x["season"] in nhl[name]):
+                            bad.append(f"{path} {name}: {x['season']} is {'scored' if counted else 'not scored'} as a "
+                                       f"winning record here but {'missing from' if counted else 'listed in'} "
+                                       f"the team's winningRecordNoPlayoffSeasons")
                 if name not in teams:
                     bad.append(f"{path} {name}: no such team in the league files")
                 elif r["postResetPPI"] > teams[name]["score"]:
