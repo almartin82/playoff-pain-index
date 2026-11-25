@@ -49,11 +49,10 @@ name, which is what makes older/odd formats and different leagues comparable.
 - Only completed seasons score. A league's season counts once its championship has
   been decided, not when the calendar year ends. As of 2026-11-25 the data runs
   through: MLB 2026 (Brewers won the World Series), NBA 2025-26 (Knicks), NHL
-  2025-26 (Hurricanes), NFL 2025 (Seahawks, Super Bowl LX), CFL 2025
-  (Roughriders), WNBA 2026 (Valkyries beat the Dream 4-3), MLS 2025 (Inter
-  Miami). The 2026 CFL season has finished (the Grey Cup was played Nov 15, 2026)
-  but is NOT yet in the data. MLS Cup 2026 is scheduled for Dec 18, 2026 and the
-  2026 NFL season had not finished. Update this line whenever a league's latest
+  2025-26 (Hurricanes), NFL 2025 (Seahawks, Super Bowl LX), CFL 2026 (Elks
+  beat the Alouettes 37-30 in the 113th Grey Cup), WNBA 2026 (Valkyries beat the
+  Dream 4-3), MLS 2025 (Inter Miami). MLS Cup 2026 is scheduled for Dec 18, 2026
+  and the 2026 NFL season had not finished. Update this line whenever a league's latest
   season is added.
 
 ### Per-league round mapping

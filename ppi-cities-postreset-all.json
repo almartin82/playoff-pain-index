@@ -4326,90 +4326,24 @@
     },
     "Edmonton": {
       "Edmonton Oilers": {
-        "postResetPPI": 54,
+        "postResetPPI": 0,
         "breakdown": {
-          "finals": 2,
-          "semis": 1,
-          "quarters": 2,
-          "firstRound": 3,
+          "finals": 0,
+          "semis": 0,
+          "quarters": 0,
+          "firstRound": 0,
           "winningRecordNoPlayoff": 0
         },
-        "window": "2015-16 to 2025-26",
+        "window": "after 2026 (empty)",
         "confidence": "high",
-        "flags": [],
-        "sources": [
-          "https://en.wikipedia.org/wiki/List_of_Edmonton_Oilers_seasons",
-          "https://en.wikipedia.org/wiki/2025%E2%80%9326_Edmonton_Oilers_season",
-          "https://champsorchumps.us/team/nhl/edmonton-oilers"
+        "flags": [
+          "All-leagues reset 2026 (Elks, CFL): only seasons that end in a later year than 2026 count, and none has finished. The Oilers' 2025-26 season ended in spring 2026, before the November 2026 Grey Cup, so it does not count against it."
         ],
-        "seasons": [
-          {
-            "season": "2015-16",
-            "result": "Missed playoffs (7th, Pacific)",
-            "tier": "none",
-            "pts": 0
-          },
-          {
-            "season": "2016-17",
-            "result": "Lost Second Round to Anaheim Ducks",
-            "tier": "quarters",
-            "pts": 4
-          },
-          {
-            "season": "2017-18",
-            "result": "Missed playoffs (6th, Pacific)",
-            "tier": "none",
-            "pts": 0
-          },
-          {
-            "season": "2018-19",
-            "result": "Missed playoffs (7th, Pacific)",
-            "tier": "none",
-            "pts": 0
-          },
-          {
-            "season": "2019-20",
-            "result": "Lost qualifying round to Chicago Blackhawks (bubble; maps to firstRound by depth)",
-            "tier": "firstRound",
-            "pts": 2
-          },
-          {
-            "season": "2020-21",
-            "result": "Lost First Round to Winnipeg Jets",
-            "tier": "firstRound",
-            "pts": 2
-          },
-          {
-            "season": "2021-22",
-            "result": "Lost Conference Final to Colorado Avalanche",
-            "tier": "semis",
-            "pts": 8
-          },
-          {
-            "season": "2022-23",
-            "result": "Lost Second Round to Vegas Golden Knights",
-            "tier": "quarters",
-            "pts": 4
-          },
-          {
-            "season": "2023-24",
-            "result": "Lost Stanley Cup Final to Florida Panthers (7 games)",
-            "tier": "finals",
-            "pts": 16
-          },
-          {
-            "season": "2024-25",
-            "result": "Lost Stanley Cup Final to Florida Panthers (6 games)",
-            "tier": "finals",
-            "pts": 16
-          },
-          {
-            "season": "2025-26",
-            "result": "Lost First Round to Anaheim Ducks (4-2)",
-            "tier": "firstRound",
-            "pts": 2
-          }
-        ]
+        "sources": [
+          "https://en.wikipedia.org/wiki/113th_Grey_Cup",
+          "https://en.wikipedia.org/wiki/2025%E2%80%9326_Edmonton_Oilers_season"
+        ],
+        "seasons": []
       }
     },
     "Montreal": {

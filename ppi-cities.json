@@ -3,7 +3,7 @@
   "mode": "big4",
   "measure": "Rank-discounted post-reset PPI (big-four reset)",
   "method": "Each city's teams are sorted by their post-reset pain (most painful first) and summed at a diminishing rate: the worst counts in full, the second at 1/2, the third at 1/3, and so on (contribution = round(pain / rank)). A city RESETS like a team does: when a reset-eligible team wins a title for the city, the city clock restarts at that title, and each team counts only the PPI it has piled up in seasons AFTER it (a team whose drought predates the reset is re-scored season-by-season from the next season forward; the reset champion and later droughts count their full PPI). Reset-eligible = the big four only (MLB/NBA/NHL/NFL); a WNBA/MLS/CFL title does not reset a city.",
-  "updated": "2026-10-28",
+  "updated": "2026-11-25",
   "tableMinTeams": 2,
   "judgmentCalls": [
     "New Jersey + Long Island count as New York (Devils, Red Bulls, Giants, Jets, Islanders).",
@@ -101,11 +101,11 @@
     {
       "rank": 3,
       "city": "Vancouver",
-      "pain": 164,
+      "pain": 168,
       "teamCount": 3,
       "resetYear": null,
       "resetChamp": null,
-      "rawTotal": 217,
+      "rawTotal": 225,
       "teams": [
         {
           "team": "Vancouver Canucks",
@@ -122,11 +122,11 @@
         {
           "team": "BC Lions",
           "league": "CFL",
-          "fullPPI": 60,
-          "cityScore": 60,
+          "fullPPI": 68,
+          "cityScore": 68,
           "discountRank": 2,
           "multiplier": "1/2",
-          "contribution": 30,
+          "contribution": 34,
           "redeemed": false,
           "resetYear": null,
           "redeemedBy": null
@@ -359,47 +359,12 @@
     },
     {
       "rank": 8,
-      "city": "Edmonton",
-      "pain": 115,
-      "teamCount": 2,
-      "resetYear": 1990,
-      "resetChamp": "Edmonton Oilers",
-      "rawTotal": 127,
-      "teams": [
-        {
-          "team": "Edmonton Oilers",
-          "league": "NHL",
-          "fullPPI": 103,
-          "cityScore": 103,
-          "discountRank": 1,
-          "multiplier": "1",
-          "contribution": 103,
-          "redeemed": false,
-          "resetYear": 1990,
-          "redeemedBy": null
-        },
-        {
-          "team": "Edmonton Elks",
-          "league": "CFL",
-          "fullPPI": 24,
-          "cityScore": 24,
-          "discountRank": 2,
-          "multiplier": "1/2",
-          "contribution": 12,
-          "redeemed": false,
-          "resetYear": 1990,
-          "redeemedBy": null
-        }
-      ]
-    },
-    {
-      "rank": 9,
       "city": "Montreal",
-      "pain": 102,
+      "pain": 110,
       "teamCount": 3,
       "resetYear": 1993,
       "resetChamp": "Montreal Canadiens",
-      "rawTotal": 129,
+      "rawTotal": 145,
       "teams": [
         {
           "team": "Montreal Canadiens",
@@ -416,11 +381,11 @@
         {
           "team": "Montreal Alouettes",
           "league": "CFL",
-          "fullPPI": 24,
-          "cityScore": 24,
+          "fullPPI": 40,
+          "cityScore": 40,
           "discountRank": 2,
           "multiplier": "1/2",
-          "contribution": 12,
+          "contribution": 20,
           "redeemed": false,
           "resetYear": 1993,
           "redeemedBy": null
@@ -435,6 +400,41 @@
           "contribution": 7,
           "redeemed": false,
           "resetYear": 1993,
+          "redeemedBy": null
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "city": "Edmonton",
+      "pain": 103,
+      "teamCount": 2,
+      "resetYear": 1990,
+      "resetChamp": "Edmonton Oilers",
+      "rawTotal": 103,
+      "teams": [
+        {
+          "team": "Edmonton Oilers",
+          "league": "NHL",
+          "fullPPI": 103,
+          "cityScore": 103,
+          "discountRank": 1,
+          "multiplier": "1",
+          "contribution": 103,
+          "redeemed": false,
+          "resetYear": 1990,
+          "redeemedBy": null
+        },
+        {
+          "team": "Edmonton Elks",
+          "league": "CFL",
+          "fullPPI": 0,
+          "cityScore": 0,
+          "discountRank": 2,
+          "multiplier": "1/2",
+          "contribution": 0,
+          "redeemed": false,
+          "resetYear": 1990,
           "redeemedBy": null
         }
       ]
@@ -782,20 +782,20 @@
     {
       "rank": 18,
       "city": "Winnipeg",
-      "pain": 68,
+      "pain": 76,
       "teamCount": 2,
       "resetYear": null,
       "resetChamp": null,
-      "rawTotal": 83,
+      "rawTotal": 91,
       "teams": [
         {
           "team": "Winnipeg Blue Bombers",
           "league": "CFL",
-          "fullPPI": 52,
-          "cityScore": 52,
+          "fullPPI": 60,
+          "cityScore": 60,
           "discountRank": 1,
           "multiplier": "1",
-          "contribution": 52,
+          "contribution": 60,
           "redeemed": false,
           "resetYear": null,
           "redeemedBy": null
@@ -1202,6 +1202,89 @@
     },
     {
       "rank": 29,
+      "city": "Toronto",
+      "pain": 35,
+      "teamCount": 6,
+      "resetYear": 2019,
+      "resetChamp": "Toronto Raptors",
+      "rawTotal": 210,
+      "teams": [
+        {
+          "team": "Toronto Blue Jays",
+          "league": "MLB",
+          "fullPPI": 48,
+          "cityScore": 23,
+          "discountRank": 1,
+          "multiplier": "1",
+          "contribution": 23,
+          "redeemed": true,
+          "resetYear": 2019,
+          "redeemedBy": "Toronto Raptors (2019)"
+        },
+        {
+          "team": "Toronto Maple Leafs",
+          "league": "NHL",
+          "fullPPI": 132,
+          "cityScore": 16,
+          "discountRank": 2,
+          "multiplier": "1/2",
+          "contribution": 8,
+          "redeemed": true,
+          "resetYear": 2019,
+          "redeemedBy": "Toronto Raptors (2019)"
+        },
+        {
+          "team": "Toronto Raptors",
+          "league": "NBA",
+          "fullPPI": 8,
+          "cityScore": 8,
+          "discountRank": 3,
+          "multiplier": "1/3",
+          "contribution": 3,
+          "redeemed": false,
+          "resetYear": 2019,
+          "redeemedBy": null
+        },
+        {
+          "team": "Toronto Argonauts",
+          "league": "CFL",
+          "fullPPI": 4,
+          "cityScore": 4,
+          "discountRank": 4,
+          "multiplier": "1/4",
+          "contribution": 1,
+          "redeemed": false,
+          "resetYear": 2019,
+          "redeemedBy": null
+        },
+        {
+          "team": "Toronto FC",
+          "league": "MLS",
+          "fullPPI": 18,
+          "cityScore": 2,
+          "discountRank": 5,
+          "multiplier": "1/5",
+          "contribution": 0,
+          "redeemed": true,
+          "resetYear": 2019,
+          "redeemedBy": "Toronto Raptors (2019)"
+        },
+        {
+          "team": "Toronto Tempo",
+          "league": "WNBA",
+          "fullPPI": 0,
+          "cityScore": 0,
+          "discountRank": 6,
+          "multiplier": "1/6",
+          "contribution": 0,
+          "redeemed": false,
+          "resetYear": 2019,
+          "redeemedBy": null
+        }
+      ]
+    },
+    {
+      "rank": 30,
       "city": "Chicago",
       "pain": 35,
       "teamCount": 7,
@@ -1292,89 +1375,6 @@
           "redeemed": true,
           "resetYear": 2016,
           "redeemedBy": "Chicago Cubs (2016)"
-        }
-      ]
-    },
-    {
-      "rank": 30,
-      "city": "Toronto",
-      "pain": 34,
-      "teamCount": 6,
-      "resetYear": 2019,
-      "resetChamp": "Toronto Raptors",
-      "rawTotal": 206,
-      "teams": [
-        {
-          "team": "Toronto Blue Jays",
-          "league": "MLB",
-          "fullPPI": 48,
-          "cityScore": 23,
-          "discountRank": 1,
-          "multiplier": "1",
-          "contribution": 23,
-          "redeemed": true,
-          "resetYear": 2019,
-          "redeemedBy": "Toronto Raptors (2019)"
-        },
-        {
-          "team": "Toronto Maple Leafs",
-          "league": "NHL",
-          "fullPPI": 132,
-          "cityScore": 16,
-          "discountRank": 2,
-          "multiplier": "1/2",
-          "contribution": 8,
-          "redeemed": true,
-          "resetYear": 2019,
-          "redeemedBy": "Toronto Raptors (2019)"
-        },
-        {
-          "team": "Toronto Raptors",
-          "league": "NBA",
-          "fullPPI": 8,
-          "cityScore": 8,
-          "discountRank": 3,
-          "multiplier": "1/3",
-          "contribution": 3,
-          "redeemed": false,
-          "resetYear": 2019,
-          "redeemedBy": null
-        },
-        {
-          "team": "Toronto FC",
-          "league": "MLS",
-          "fullPPI": 18,
-          "cityScore": 2,
-          "discountRank": 4,
-          "multiplier": "1/4",
-          "contribution": 0,
-          "redeemed": true,
-          "resetYear": 2019,
-          "redeemedBy": "Toronto Raptors (2019)"
-        },
-        {
-          "team": "Toronto Argonauts",
-          "league": "CFL",
-          "fullPPI": 0,
-          "cityScore": 0,
-          "discountRank": 5,
-          "multiplier": "1/5",
-          "contribution": 0,
-          "redeemed": false,
-          "resetYear": 2019,
-          "redeemedBy": null
-        },
-        {
-          "team": "Toronto Tempo",
-          "league": "WNBA",
-          "fullPPI": 0,
-          "cityScore": 0,
-          "discountRank": 6,
-          "multiplier": "1/6",
-          "contribution": 0,
-          "redeemed": false,
-          "resetYear": 2019,
-          "redeemedBy": null
         }
       ]
     },
@@ -2348,6 +2348,29 @@
     },
     {
       "rank": 47,
+      "city": "Regina",
+      "pain": 4,
+      "teamCount": 1,
+      "resetYear": null,
+      "resetChamp": null,
+      "rawTotal": 4,
+      "teams": [
+        {
+          "team": "Saskatchewan Roughriders",
+          "league": "CFL",
+          "fullPPI": 4,
+          "cityScore": 4,
+          "discountRank": 1,
+          "multiplier": "1",
+          "contribution": 4,
+          "redeemed": false,
+          "resetYear": null,
+          "redeemedBy": null
+        }
+      ]
+    },
+    {
+      "rank": 48,
       "city": "Miami",
       "pain": 1,
       "teamCount": 5,
@@ -2418,7 +2441,7 @@
       ]
     },
     {
-      "rank": 48,
+      "rank": 49,
       "city": "New York",
       "pain": 0,
       "teamCount": 12,
@@ -2573,7 +2596,7 @@
       ]
     },
     {
-      "rank": 49,
+      "rank": 50,
       "city": "Seattle",
       "pain": 0,
       "teamCount": 5,
@@ -2644,7 +2667,7 @@
       ]
     },
     {
-      "rank": 50,
+      "rank": 51,
       "city": "Milwaukee",
       "pain": 0,
       "teamCount": 2,
@@ -2679,7 +2702,7 @@
       ]
     },
     {
-      "rank": 51,
+      "rank": 52,
       "city": "Raleigh",
       "pain": 0,
       "teamCount": 1,
@@ -2697,29 +2720,6 @@
           "contribution": 0,
           "redeemed": false,
           "resetYear": 2026,
-          "redeemedBy": null
-        }
-      ]
-    },
-    {
-      "rank": 52,
-      "city": "Regina",
-      "pain": 0,
-      "teamCount": 1,
-      "resetYear": null,
-      "resetChamp": null,
-      "rawTotal": 0,
-      "teams": [
-        {
-          "team": "Saskatchewan Roughriders",
-          "league": "CFL",
-          "fullPPI": 0,
-          "cityScore": 0,
-          "discountRank": 1,
-          "multiplier": "1",
-          "contribution": 0,
-          "redeemed": false,
-          "resetYear": null,
           "redeemedBy": null
         }
       ]
@@ -2811,11 +2811,11 @@
     {
       "rank": 3,
       "city": "Vancouver",
-      "pain": 164,
+      "pain": 168,
       "teamCount": 3,
       "resetYear": null,
       "resetChamp": null,
-      "rawTotal": 217,
+      "rawTotal": 225,
       "teams": [
         {
           "team": "Vancouver Canucks",
@@ -2832,11 +2832,11 @@
         {
           "team": "BC Lions",
           "league": "CFL",
-          "fullPPI": 60,
-          "cityScore": 60,
+          "fullPPI": 68,
+          "cityScore": 68,
           "discountRank": 2,
           "multiplier": "1/2",
-          "contribution": 30,
+          "contribution": 34,
           "redeemed": false,
           "resetYear": null,
           "redeemedBy": null
@@ -3046,47 +3046,12 @@
     },
     {
       "rank": 7,
-      "city": "Edmonton",
-      "pain": 115,
-      "teamCount": 2,
-      "resetYear": 1990,
-      "resetChamp": "Edmonton Oilers",
-      "rawTotal": 127,
-      "teams": [
-        {
-          "team": "Edmonton Oilers",
-          "league": "NHL",
-          "fullPPI": 103,
-          "cityScore": 103,
-          "discountRank": 1,
-          "multiplier": "1",
-          "contribution": 103,
-          "redeemed": false,
-          "resetYear": 1990,
-          "redeemedBy": null
-        },
-        {
-          "team": "Edmonton Elks",
-          "league": "CFL",
-          "fullPPI": 24,
-          "cityScore": 24,
-          "discountRank": 2,
-          "multiplier": "1/2",
-          "contribution": 12,
-          "redeemed": false,
-          "resetYear": 1990,
-          "redeemedBy": null
-        }
-      ]
-    },
-    {
-      "rank": 8,
       "city": "Montreal",
-      "pain": 102,
+      "pain": 110,
       "teamCount": 3,
       "resetYear": 1993,
       "resetChamp": "Montreal Canadiens",
-      "rawTotal": 129,
+      "rawTotal": 145,
       "teams": [
         {
           "team": "Montreal Canadiens",
@@ -3103,11 +3068,11 @@
         {
           "team": "Montreal Alouettes",
           "league": "CFL",
-          "fullPPI": 24,
-          "cityScore": 24,
+          "fullPPI": 40,
+          "cityScore": 40,
           "discountRank": 2,
           "multiplier": "1/2",
-          "contribution": 12,
+          "contribution": 20,
           "redeemed": false,
           "resetYear": 1993,
           "redeemedBy": null
@@ -3122,6 +3087,41 @@
           "contribution": 7,
           "redeemed": false,
           "resetYear": 1993,
+          "redeemedBy": null
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "city": "Edmonton",
+      "pain": 103,
+      "teamCount": 2,
+      "resetYear": 1990,
+      "resetChamp": "Edmonton Oilers",
+      "rawTotal": 103,
+      "teams": [
+        {
+          "team": "Edmonton Oilers",
+          "league": "NHL",
+          "fullPPI": 103,
+          "cityScore": 103,
+          "discountRank": 1,
+          "multiplier": "1",
+          "contribution": 103,
+          "redeemed": false,
+          "resetYear": 1990,
+          "redeemedBy": null
+        },
+        {
+          "team": "Edmonton Elks",
+          "league": "CFL",
+          "fullPPI": 0,
+          "cityScore": 0,
+          "discountRank": 2,
+          "multiplier": "1/2",
+          "contribution": 0,
+          "redeemed": false,
+          "resetYear": 1990,
           "redeemedBy": null
         }
       ]
@@ -3469,20 +3469,20 @@
     {
       "rank": 17,
       "city": "Winnipeg",
-      "pain": 68,
+      "pain": 76,
       "teamCount": 2,
       "resetYear": null,
       "resetChamp": null,
-      "rawTotal": 83,
+      "rawTotal": 91,
       "teams": [
         {
           "team": "Winnipeg Blue Bombers",
           "league": "CFL",
-          "fullPPI": 52,
-          "cityScore": 52,
+          "fullPPI": 60,
+          "cityScore": 60,
           "discountRank": 1,
           "multiplier": "1",
-          "contribution": 52,
+          "contribution": 60,
           "redeemed": false,
           "resetYear": null,
           "redeemedBy": null
